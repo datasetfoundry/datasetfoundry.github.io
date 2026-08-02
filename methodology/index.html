@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/claimsforgefavicon.svg"><meta name="description" content="Deterministic synthetic motor insurance data for Ghana, built for research and thesis work."><title>Methodology · ClaimsForge</title><style>.intro[data-astro-cid-qn2a7f5i]{padding:72px 0 56px}.lede[data-astro-cid-qn2a7f5i]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-qn2a7f5i]{padding-bottom:100px}.doc-grid[data-astro-cid-qn2a7f5i] article[data-astro-cid-qn2a7f5i]{max-width:74ch}h2[data-astro-cid-qn2a7f5i]{margin-top:2em}code[data-astro-cid-qn2a7f5i].mono{font-family:var(--font-mono);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:1px 5px;font-size:.88em}.assumptions-table[data-astro-cid-qn2a7f5i]{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}.assumptions-table[data-astro-cid-qn2a7f5i] th[data-astro-cid-qn2a7f5i],.assumptions-table[data-astro-cid-qn2a7f5i] td[data-astro-cid-qn2a7f5i]{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}.assumptions-table[data-astro-cid-qn2a7f5i] th[data-astro-cid-qn2a7f5i]{font-family:var(--font-mono);text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;color:var(--ink-muted)}ol[data-astro-cid-qn2a7f5i],ul[data-astro-cid-qn2a7f5i]{padding-left:1.3em}li[data-astro-cid-qn2a7f5i]{margin-bottom:.6em}
+</style>
+<link rel="stylesheet" href="/claimsforge/_astro/generate.CJwCytzF.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/claimsforge" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>⚒</span> <span data-astro-cid-3ef6ksr2>Claims<strong data-astro-cid-3ef6ksr2>Forge</strong></span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/claimsforge" data-astro-cid-3ef6ksr2>Home</a><a href="/claimsforgegenerate" data-astro-cid-3ef6ksr2>Generate</a><a href="/claimsforgemethodology" data-astro-cid-3ef6ksr2>Methodology</a> </nav> </div> </header>  <main>  <section class="section-dark intro" data-astro-cid-qn2a7f5i> <div class="container" data-astro-cid-qn2a7f5i> <span class="eyebrow" data-astro-cid-qn2a7f5i>Methodology</span> <h1 data-astro-cid-qn2a7f5i>What ClaimsForge actually does</h1> <p class="muted lede" data-astro-cid-qn2a7f5i>
+This page is meant to be citable directly in a methodology chapter.
+        Everything below is a design decision, not a discovery — ClaimsForge
+        does not model real Ghanaian insurer data, it encodes a documented
+        set of assumptions about how driver risk factors should relate to
+        claims, so the relationships can be recovered and used to teach or
+        test statistical methods.
+</p> </div> </section> <section class="section-ledger doc" data-astro-cid-qn2a7f5i> <div class="container doc-grid" data-astro-cid-qn2a7f5i> <article data-astro-cid-qn2a7f5i> <h2 data-astro-cid-qn2a7f5i>1. Two-stage model</h2> <p data-astro-cid-qn2a7f5i>
+Every policy-year record is generated in two stages, mirroring
+          how actuaries typically decompose a frequency–severity model:
+</p> <ol data-astro-cid-qn2a7f5i> <li data-astro-cid-qn2a7f5i> <strong data-astro-cid-qn2a7f5i>Frequency</strong> — a logistic model decides whether the
+            policy has a claim at all this year. It is driven primarily by
+            the driver's past claims count, with secondary contributions
+            from vehicle use (commercial vs private), vehicle age, and
+            region. Driver age, gender, and experience have only small
+            effects here, by design — this keeps them clean predictors of
+            severity rather than confounded with frequency.
+</li> <li data-astro-cid-qn2a7f5i> <strong data-astro-cid-qn2a7f5i>Severity</strong> — for policies that do have a claim, a
+            log-normal model determines the claim amount. This is where the
+            four core hypotheses are implemented directly.
+</li> </ol> <h2 data-astro-cid-qn2a7f5i>2. The four hypotheses</h2> <table class="assumptions-table" data-astro-cid-qn2a7f5i> <thead data-astro-cid-qn2a7f5i> <tr data-astro-cid-qn2a7f5i><th data-astro-cid-qn2a7f5i>Factor</th><th data-astro-cid-qn2a7f5i>Direction on claim size</th><th data-astro-cid-qn2a7f5i>Rationale encoded</th></tr> </thead> <tbody data-astro-cid-qn2a7f5i> <tr data-astro-cid-qn2a7f5i> <td data-astro-cid-qn2a7f5i>Driver age</td> <td data-astro-cid-qn2a7f5i>Negative</td> <td data-astro-cid-qn2a7f5i>Older drivers drive more cautiously; when they do claim, it's smaller.</td> </tr> <tr data-astro-cid-qn2a7f5i> <td data-astro-cid-qn2a7f5i>Gender (male)</td> <td data-astro-cid-qn2a7f5i>Positive</td> <td data-astro-cid-qn2a7f5i>Male drivers linked to higher-speed, higher-impact driving.</td> </tr> <tr data-astro-cid-qn2a7f5i> <td data-astro-cid-qn2a7f5i>Driving experience</td> <td data-astro-cid-qn2a7f5i>Negative</td> <td data-astro-cid-qn2a7f5i>More experienced drivers avoid the most serious accidents.</td> </tr> <tr data-astro-cid-qn2a7f5i> <td data-astro-cid-qn2a7f5i>Past claims count</td> <td data-astro-cid-qn2a7f5i>Positive</td> <td data-astro-cid-qn2a7f5i>Riskier drivers overall — claims are larger, not just more frequent.</td> </tr> </tbody> </table> <h2 data-astro-cid-qn2a7f5i>3. Coefficients</h2> <p data-astro-cid-qn2a7f5i>
+Severity is modeled as <code class="mono" data-astro-cid-qn2a7f5i>log(claim_amount) = log(3200) − 0.010·(age − 35) + 0.18·is_male − 0.028·experience_years + 0.10·past_claims + ε</code>,
+          where ε is normal noise with standard deviation 0.55, and the
+          result is capped near the vehicle's insured value. These
+          coefficients are illustrative, chosen to produce a clearly
+          recoverable signal at typical sample sizes (a few thousand
+          records) without being so strong that the relationship is trivial
+          to detect. They are not derived from real claims data — adjust
+          them in <code class="mono" data-astro-cid-qn2a7f5i>src/lib/generator/severity-model.ts</code> if your
+          thesis calls for weaker or stronger effects.
+</p> <h2 data-astro-cid-qn2a7f5i>4. Determinism</h2> <p data-astro-cid-qn2a7f5i>
+Generation uses a seeded PRNG (mulberry32) rather than
+<code class="mono" data-astro-cid-qn2a7f5i>Math.random()</code>. The same seed and record count will always
+          produce byte-identical output in any standards-compliant
+          browser. Report the seed and record count alongside your
+          dataset — that pair is sufficient for anyone to regenerate
+          exactly what you analyzed.
+</p> <h2 data-astro-cid-qn2a7f5i>5. What's decorative vs. load-bearing</h2> <p data-astro-cid-qn2a7f5i>
+Region, vehicle make/model, policy class, and premium
+          calculations exist to make records look like real Ghanaian motor
+          policies (NIC-style policy classes, GHS premiums, common vehicle
+          makes) and are internally consistent with each other, but they
+          are not the object of the four hypotheses above. Treat the
+          premium and vehicle-value figures as illustrative, not as
+          calibrated to actual National Insurance Commission rate tables.
+</p> <h2 data-astro-cid-qn2a7f5i>6. Known limitations</h2> <ul data-astro-cid-qn2a7f5i> <li data-astro-cid-qn2a7f5i>This is synthetic data. It should never be presented as, or
+            mistaken for, real insurer data in a publication.</li> <li data-astro-cid-qn2a7f5i>Relationships are linear in log-space by construction; no
+            interaction effects (e.g. age × experience) are modeled unless
+            you add them.</li> <li data-astro-cid-qn2a7f5i>The frequency model's secondary driver-level effects are
+            intentionally weak — if your thesis needs age/gender/experience
+            to also drive claim frequency (not just severity), increase
+            those coefficients in <code class="mono" data-astro-cid-qn2a7f5i>frequency-model.ts</code> and say so in
+            your write-up.</li> </ul> <h2 data-astro-cid-qn2a7f5i>7. Citing this tool</h2> <p data-astro-cid-qn2a7f5i>
+Something like: <em data-astro-cid-qn2a7f5i>"Synthetic data generated using ClaimsForge
+          (seed = 42, n = 5,000), a deterministic motor insurance data
+          generator built for this thesis in the absence of accessible
+          real-world insurer data."</em> Include the seed and record count
+          so the exact dataset is reproducible from the tool alone.
+</p> </article> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-inner" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>ClaimsForge — synthetic data for research, not real policyholder data.</p> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 ClaimsForge project.</p> </div> </footer>  </body></html> 
