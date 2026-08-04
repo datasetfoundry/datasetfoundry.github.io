@@ -1,0 +1,20 @@
+import{g as f,A as l,d as h,e as $,i as E,f as v}from"./hoisted.D5vJOEgH.js";import{g as b,d as C,t as _,a as x}from"./manifest.DLQFb0Gw.js";const u="https://claimsforge.onrender.com".replace(/\/+$/,"");async function c(t,e={}){const{method:o="GET",body:n}=e;let s;try{s=await fetch(`${u}${t}`,{method:o,headers:{"Content-Type":"application/json",...f()},...n!==void 0?{body:JSON.stringify(n)}:{}})}catch(i){throw new l(`Could not reach the ClaimsForge API at ${u}. (${i.message})`)}if(s.status===204)return;let a=null;try{a=await s.json()}catch{}if(!s.ok){const i=h(a)??s.statusText??`HTTP ${s.status}`;throw new l(i,s.status)}return a}async function L(t){return c("/api/presets/")}async function S(t){await c(`/api/presets/${t}/`,{method:"DELETE"})}async function B(t){return c("/api/datasets/")}const g="/",r=document.getElementById("loading-note"),I=document.getElementById("account-content"),m=document.getElementById("anon-content"),q=document.getElementById("welcome-heading"),A=document.getElementById("profile-line"),T=document.getElementById("wallet-balance"),P=document.getElementById("logout-btn"),d=document.getElementById("presets-list"),H=document.getElementById("presets-empty"),y=document.getElementById("history-list"),D=document.getElementById("history-empty");function p(t){return new Date(t).toLocaleString(void 0,{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})}async function w(){const t=await L();H.hidden=t.length>0,d.innerHTML=t.map(e=>`
+      <div class="list-row" data-preset-id="${e.id}">
+        <div class="list-row-main">
+          <span class="list-row-title">${e.name}</span>
+          <span class="list-row-meta">${e.line} · updated ${p(e.updated_at)}</span>
+        </div>
+        <div style="display:flex; gap:14px; align-items:center;">
+          <a class="btn-text" href="${g}generate/${e.line}?preset=${e.id}">Use in generator</a>
+          <button type="button" class="btn-text delete-preset-btn" data-id="${e.id}">Delete</button>
+        </div>
+      </div>`).join(""),d.querySelectorAll(".delete-preset-btn").forEach(e=>{e.addEventListener("click",async()=>{const o=Number(e.dataset.id),s=d.querySelector(`[data-preset-id="${o}"]`)?.querySelector(".list-row-title")?.textContent??"this preset";window.confirm(`Delete preset "${s}"?`)&&(await S(o),await w())})})}async function k(){const t=await B();D.hidden=t.length>0,y.innerHTML=t.map(e=>`
+      <div class="list-row" data-dataset-id="${e.id}">
+        <div class="list-row-main">
+          <span class="list-row-title">${e.line} · seed ${e.seed} · n=${e.n.toLocaleString()}</span>
+          <span class="list-row-meta">
+            ${p(e.created_at)} · generator v${e.generator_version} · ${e.row_count.toLocaleString()} rows
+          </span>
+        </div>
+        <button type="button" class="btn-text redownload-btn" data-id="${e.id}">Re-download CSV</button>
+      </div>`).join(""),y.querySelectorAll(".redownload-btn").forEach(e=>{e.addEventListener("click",async()=>{const o=Number(e.dataset.id),n=t.find(a=>a.id===o);if(!n)return;const s=e.textContent;e.textContent="Regenerating…";try{const{records:a,manifest:i}=await b(n.line,{n:n.n,seed:n.seed,policyYearStart:n.policy_year_start,policyYearEnd:n.policy_year_end??void 0,severityCoefs:n.severity_coefs,frequencyCoefs:n.frequency_coefs});C(`claimsforge_${n.line}_seed${n.seed}_n${n.n}.csv`,_(a)),i?x(i):window.alert("CSV downloaded, but the manifest couldn't be regenerated — your session may have expired. Try logging in again.")}catch(a){window.alert(a instanceof l?a.message:`Unexpected error: ${a}`)}finally{e.textContent=s}})})}async function U(){if(!E()){r.hidden=!0,m.hidden=!1;return}try{const t=await v();q.textContent=t.full_name?`Welcome back, ${t.full_name}`:"Your account",A.textContent=t.institution?`${t.email} · ${t.institution}`:t.email,T.textContent=`${t.row_balance.toLocaleString()} rows remaining in your wallet`,await Promise.all([w(),k()]),r.hidden=!0,I.hidden=!1}catch{r.hidden=!0,m.hidden=!1}}P.addEventListener("click",async()=>{await $(),window.location.href=`${g}login`});U();
