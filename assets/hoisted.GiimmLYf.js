@@ -13,7 +13,7 @@ import{g as f,A as l,d as h,e as $,i as E,f as v}from"./hoisted.D5vJOEgH.js";imp
         <div class="list-row-main">
           <span class="list-row-title">${e.line} · seed ${e.seed} · n=${e.n.toLocaleString()}</span>
           <span class="list-row-meta">
-            ${p(e.created_at)} · generator v${e.generator_version} · ${e.row_count.toLocaleString()} rows
+            ${p(e.created_at)} · generator ${e.generator_version} · ${e.row_count.toLocaleString()} rows
           </span>
         </div>
         <button type="button" class="btn-text redownload-btn" data-id="${e.id}">Re-download CSV</button>
