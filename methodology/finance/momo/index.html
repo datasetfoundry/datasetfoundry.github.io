@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic finance data — Mobile Money and Micro-Credit &#38; Susu Scoring live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+      Mobile Money methodology · Finance
+    </title><style>.intro[data-astro-cid-zb6r5iu5]{padding:72px 0 56px}.lede[data-astro-cid-zb6r5iu5]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-zb6r5iu5]{padding-bottom:100px}.doc-grid[data-astro-cid-zb6r5iu5] article[data-astro-cid-zb6r5iu5]{max-width:74ch}h2[data-astro-cid-zb6r5iu5]{margin-top:2em}code[data-astro-cid-zb6r5iu5].mono{font-family:var(--font-mono);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:1px 5px;font-size:.88em}.assumptions-table[data-astro-cid-zb6r5iu5]{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}.assumptions-table[data-astro-cid-zb6r5iu5] th[data-astro-cid-zb6r5iu5],.assumptions-table[data-astro-cid-zb6r5iu5] td[data-astro-cid-zb6r5iu5]{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}.assumptions-table[data-astro-cid-zb6r5iu5] th[data-astro-cid-zb6r5iu5]{font-family:var(--font-mono);text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;color:var(--ink-muted)}ol[data-astro-cid-zb6r5iu5],ul[data-astro-cid-zb6r5iu5]{padding-left:1.3em}li[data-astro-cid-zb6r5iu5]{margin-bottom:.6em}
+</style>
+<link rel="stylesheet" href="/assets/account.BdDEimP_.css"><script type="module" src="/assets/hoisted.CR-FWJQ2.js"></script></head> <body> <!--
+      ROADMAP.md Phase 4.5.1 — platform strip. This is the
+      "frontfacing" piece of the platform pivot: a thin bar above the
+      current line family's header, present on every line-family
+      page, naming Dataset Foundry as the platform this family
+      belongs to and linking to the platform root at `/`. Deliberately
+      not a rebrand of the header itself (brand mark/wordmark below
+      stay this family's own brand) — see index.astro's own header
+      comment for the `/` <-> `/insurance` reversal. Omitted on the
+      platform page itself (variant="platform") — no reason to link a
+      page to itself.
+    -->
+    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
+          citable datasets across domains
+</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/finance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+⚒
+</span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Finance</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/finance" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/generate/finance/momo" data-astro-cid-3ef6ksr2>Mobile Money</a> </li><li data-astro-cid-3ef6ksr2> <a href="/generate/finance/susu" data-astro-cid-3ef6ksr2>Micro-Credit &amp; Susu</a> </li> </ul> </div><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Methodology <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/methodology/finance/momo" data-astro-cid-3ef6ksr2>Mobile Money</a> </li><li data-astro-cid-3ef6ksr2> <a href="/methodology/finance/susu" data-astro-cid-3ef6ksr2>Micro-Credit &amp; Susu</a> </li> </ul> </div> </nav> <div class="header-auth" data-astro-cid-3ef6ksr2> <a href="/login" id="header-login-link" data-astro-cid-3ef6ksr2>Log in</a> <a href="/institution" id="header-institution-link" hidden data-astro-cid-3ef6ksr2>
+Institution
+</a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
+Log out
+</button> </div> </div> </header>   <main>  <section class="section-dark intro" data-astro-cid-zb6r5iu5> <div class="container" data-astro-cid-zb6r5iu5> <span class="eyebrow" data-astro-cid-zb6r5iu5>Methodology &middot; Mobile Money</span> <h1 data-astro-cid-zb6r5iu5>What Dataset Foundry's Mobile Money line actually does</h1> <p class="muted lede" data-astro-cid-zb6r5iu5>
+This page is meant to be citable directly in a methodology chapter.
+        Everything below is a design decision, not a discovery — Dataset Foundry
+        does not model real Ghanaian telco or transaction data, it encodes a
+        documented set of assumptions about how Mobile Money fraud-signal
+        factors should relate to fraud outcomes, so the relationships can be
+        recovered and used to teach or test fraud-detection methods. This is the
+        first non-insurance line on the platform, and it deliberately does <em data-astro-cid-zb6r5iu5>not</em> mirror the
+<a href="/methodology/insurance/motor" data-astro-cid-zb6r5iu5>motor</a>,
+<a href="/methodology/insurance/life" data-astro-cid-zb6r5iu5>life</a>,
+<a href="/methodology/insurance/health-claims" data-astro-cid-zb6r5iu5>health</a>, or
+<a href="/methodology/insurance/property" data-astro-cid-zb6r5iu5>Home & Property</a> lines'
+        two-stage frequency/severity model — see section 1 for why.
+</p> </div> </section> <section class="section-ledger doc" data-astro-cid-zb6r5iu5> <div class="container doc-grid" data-astro-cid-zb6r5iu5> <article data-astro-cid-zb6r5iu5> <h2 data-astro-cid-zb6r5iu5>1. Single-stage model</h2> <p data-astro-cid-zb6r5iu5>
+Every record is one simulated Mobile Money transaction, generated in a
+          single stage rather than the two-stage frequency/severity split every
+          insurance line on this platform uses. Fraud labeling has no
+          severity-equivalent to model separately: a transaction was either
+          fraudulent or it wasn't, and how much money moved is a property of the
+          transaction itself, not of the fraud outcome, so
+<code class="mono" data-astro-cid-zb6r5iu5>transaction_amount_ghs</code> is drawn independently
+          of <code class="mono" data-astro-cid-zb6r5iu5>is_fraudulent</code> rather than conditioned on it
+          the way, say, a claim's cost is conditioned on a claim having occurred.
+          Fraud probability is a logistic (log-odds) model over four independent risk
+          factors that combine additively, closer to motor's from-scratch logistic
+          frequency model than to life's or health's table-rated approach — table-rating
+          doesn't fit here because there's no single natural ordinal axis, like age,
+          to band against.
+</p> <p data-astro-cid-zb6r5iu5>
+Alongside the binary <code class="mono" data-astro-cid-zb6r5iu5>is_fraudulent</code> label, every
+          record also carries a continuous <code class="mono" data-astro-cid-zb6r5iu5>anomaly_score</code>. This is not a second coefficient table or a second hypothesis set —
+          it's derived from the same underlying fraud logit plus independent
+          noise, so a downstream fraud-detection model has a continuous score to
+          threshold against, rather than only the binary ground-truth label it's
+          meant to be trained to predict.
+</p> <h2 data-astro-cid-zb6r5iu5>2. The four hypotheses</h2> <p data-astro-cid-zb6r5iu5>
+All four hypotheses act on fraud probability directly — there's no
+          `claim_occurred`-style gate to condition a second-stage check on the
+          way an insurance line's severity hypotheses are conditioned on a claim
+          having occurred. Each row below is independently documented against
+          publicly-known Mobile Money fraud typologies (Bank of Ghana and GSMA
+          mobile-money fraud advisories), not invented to hit a target fraud
+          rate.
+</p> <table class="assumptions-table" data-astro-cid-zb6r5iu5> <thead data-astro-cid-zb6r5iu5> <tr data-astro-cid-zb6r5iu5><th data-astro-cid-zb6r5iu5>Factor</th><th data-astro-cid-zb6r5iu5>Direction on fraud probability</th><th data-astro-cid-zb6r5iu5>Verification n</th></tr> </thead> <tbody data-astro-cid-zb6r5iu5> <tr data-astro-cid-zb6r5iu5> <td data-astro-cid-zb6r5iu5>Transaction velocity (trailing 24h)</td> <td data-astro-cid-zb6r5iu5>Positive</td> <td data-astro-cid-zb6r5iu5>20,000</td> </tr> <tr data-astro-cid-zb6r5iu5> <td data-astro-cid-zb6r5iu5>SIM-swap recency</td> <td data-astro-cid-zb6r5iu5>Positive</td> <td data-astro-cid-zb6r5iu5>20,000</td> </tr> <tr data-astro-cid-zb6r5iu5> <td data-astro-cid-zb6r5iu5>Wallet tenure</td> <td data-astro-cid-zb6r5iu5>Positive (inverse — newer wallets carry more risk)</td> <td data-astro-cid-zb6r5iu5>20,000</td> </tr> <tr data-astro-cid-zb6r5iu5> <td data-astro-cid-zb6r5iu5>Agent cash-out channel</td> <td data-astro-cid-zb6r5iu5>Positive (Cash-Out rows only)</td> <td data-astro-cid-zb6r5iu5>20,000</td> </tr> </tbody> </table> <p data-astro-cid-zb6r5iu5> <strong data-astro-cid-zb6r5iu5>Transaction velocity</strong> — a rapidly rising count of transactions
+          in the trailing 24 hours is the structuring/"smurfing" signal: splitting
+          or cycling funds through many small transactions to move stolen money before
+          a victim or the telco can freeze the wallet, or to stay under a reporting
+          threshold.
+<strong data-astro-cid-zb6r5iu5>SIM-swap recency</strong> is by far the largest single loading in
+          the model — a fresh SIM swap (within the last 24 hours) is widely documented
+          as the strongest individual fraud signal in the Mobile Money literature
+          this line is anchored against, and the loading decays as the swap ages out
+          of that highest-risk window.
+<strong data-astro-cid-zb6r5iu5>Wallet tenure</strong> works inversely: a wallet opened within the
+          last month has no established legitimate transaction history to compare
+          against and is disproportionately the vehicle a fraud ring picks, so the
+          loading is highest for the newest band and actually goes slightly negative
+          for the oldest ("3+ years") band, rather than just flattening at zero.
+<strong data-astro-cid-zb6r5iu5>Agent cash-out channel</strong> only applies to Cash-Out rows (about
+          8% of all transactions) — an unmanned ATM cash-out carries the largest loading
+          of the four channels since it leaves the weakest human trail, while a Bank
+          Partner Cash-Out sits
+<em data-astro-cid-zb6r5iu5>below</em> the reference band, since it inherits the bank's own KYC
+          checks. Because this hypothesis is only measurable on Cash-Out rows and
+          carries the weakest of the four loadings, it needs more generated records
+          than the other three to hold consistently — see the note on verification
+          n below.
+</p> <p data-astro-cid-zb6r5iu5>
+All four hypotheses are verified at n=20,000, not the n=5,000 the
+          motor/life/health/property lines default to. This isn't a conservative
+          buffer applied uniformly — it's driven specifically by the agent
+          cash-out channel hypothesis: at n=5,000 (roughly 400 Cash-Out rows per
+          seed), the weak, Cash-Out-only channel effect flips sign for at least
+          one regression seed, sampling noise on a real-but-weak effect rather
+          than a broken hypothesis. At n=20,000 (roughly 1,600 Cash-Out rows per
+          seed) it holds positive across every regression seed, so all four
+          hypotheses are reported at that n for consistency, not just the one
+          that strictly needs it.
+</p> <h2 data-astro-cid-zb6r5iu5>3. Coefficients</h2> <p data-astro-cid-zb6r5iu5>
+Fraud probability is modeled as
+<code class="mono" data-astro-cid-zb6r5iu5>p = clip(sigmoid(intercept + velocity_band_loading +
+            agent_channel_loading + sim_swap_loading + wallet_tenure_loading),
+            min_probability, max_probability)</code>, where each loading is a named log-odds term keyed off the
+          transaction's own velocity band, agent cash-out channel (only applied
+          on Cash-Out rows — zero everywhere else), SIM-swap recency band, and
+          wallet tenure band. The intercept is tuned so the realized fraud rate
+          across a generated dataset lands in the low single-digit percent
+          range, consistent with Mobile Money fraud-detection literature
+          treating fraud as a rare-event classification problem, not a guess to
+          hit an arbitrary target.
+<code class="mono" data-astro-cid-zb6r5iu5>anomaly_score</code> is derived from that same logit
+          plus independent normal noise (<code class="mono" data-astro-cid-zb6r5iu5>anomaly_score_noise_sd</code>), then passed back through the sigmoid and clipped to [0, 1] — it is
+          correlated with, but not a deterministic function of,
+<code class="mono" data-astro-cid-zb6r5iu5>is_fraudulent</code>, by construction. Exact
+          magnitudes aren't published on this page and aren't derived from real
+          Ghanaian telco data — see the current defaults, and change them, in
+          the
+<strong data-astro-cid-zb6r5iu5>Advanced: customize the model</strong> panel on the
+<a href="/generate/finance/momo" data-astro-cid-zb6r5iu5>Mobile Money generator</a> if your
+          thesis calls for weaker or stronger effects, and note in your write-up which
+          values you changed from the defaults.
+</p> <h2 data-astro-cid-zb6r5iu5>4. Determinism</h2> <p data-astro-cid-zb6r5iu5>
+Generation runs server-side using a seeded generator (numpy's
+<code class="mono" data-astro-cid-zb6r5iu5>default_rng</code>, PCG64) rather than an unseeded
+          source of randomness — same mechanism as every other line on the
+          platform. The same seed, record count, and generator version (stamped
+          in every citation and manifest — see the Cite section on the generator
+          page) will always reproduce byte-identical output. Report the seed and
+          record count alongside your dataset — that pair, together with the
+          generator version, is sufficient for anyone to regenerate exactly what
+          you analyzed.
+</p> <h2 data-astro-cid-zb6r5iu5>5. What's decorative vs. load-bearing</h2> <p data-astro-cid-zb6r5iu5>
+Region and transaction amount exist to make records look like real
+          Ghanaian Mobile Money transactions and are internally consistent with
+          each other, but they are not the object of the four hypotheses above — <code class="mono" data-astro-cid-zb6r5iu5>transaction_amount_ghs</code> is drawn from a per-transaction-type range independently of the fraud
+          outcome (section 1), not as a driver of it. Unlike every insurance line
+          on this platform, momo records carry no subscriber name field at all: a
+          Mobile Money fraud log is keyed off a wallet/MSISDN identifier, not a name,
+          so there is no name-inclusion toggle to disable here (contrast the other
+          four lines' <code class="mono" data-astro-cid-zb6r5iu5>insured_name</code>, gated by the
+          name-inclusion toggle — ROADMAP.md Phase 4.5.3).
+</p> <h2 data-astro-cid-zb6r5iu5>6. Known limitations</h2> <ul data-astro-cid-zb6r5iu5> <li data-astro-cid-zb6r5iu5>
+This is synthetic data. It should never be presented as, or mistaken
+            for, real telco or transaction data in a publication.
+</li> <li data-astro-cid-zb6r5iu5>
+The four risk factors combine additively in log-odds space, with no
+            interaction effects between transaction velocity, SIM-swap recency,
+            wallet tenure, and agent cash-out channel modeled beyond that simple
+            addition, unless you add them yourself downstream.
+</li> <li data-astro-cid-zb6r5iu5>
+The agent cash-out channel hypothesis is only measurable on Cash-Out
+            rows (about 8% of all transactions) — generating fewer than a few
+            thousand records will make that specific comparison look noisy even
+            though the other three hold up at smaller n.
+</li> <li data-astro-cid-zb6r5iu5>
+If your thesis needs a different balance between the four
+            hypotheses, adjust the relevant loadings in the
+<strong data-astro-cid-zb6r5iu5>Advanced: customize the model</strong> panel on the
+<a href="/generate/finance/momo" data-astro-cid-zb6r5iu5>Mobile Money generator</a> and
+            say so in your write-up.
+</li> </ul> <h2 data-astro-cid-zb6r5iu5>7. Citing this tool</h2> <p data-astro-cid-zb6r5iu5>
+Something like: <em data-astro-cid-zb6r5iu5>"Synthetic data generated using Dataset Foundry (seed = 42, n =
+            20,000), a deterministic Mobile Money fraud-signal data generator
+            built for this thesis in the absence of accessible real-world MoMo
+            transaction data."</em> Include the seed and record count so the exact dataset is reproducible
+          from the tool alone — or use the auto-generated citation block on the
+<a href="/generate/finance/momo" data-astro-cid-zb6r5iu5>generator page</a>, which
+          also includes the generator version and any advanced-config changes.
+</p> </article> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-top" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <p class="footer-brand-name mono" data-astro-cid-sz7xmlte> <a href="/" data-astro-cid-sz7xmlte>Dataset Foundry</a> </p> <p class="mono footer-tagline" data-astro-cid-sz7xmlte> Finance — synthetic data for research, not real policyholder data. </p> </div> <nav class="footer-col" aria-label="Insurance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/insurance" data-astro-cid-sz7xmlte>Insurance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/insurance/motor" data-astro-cid-sz7xmlte>Motor</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/life" data-astro-cid-sz7xmlte>Life</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/health-claims" data-astro-cid-sz7xmlte>Health</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/property" data-astro-cid-sz7xmlte>Home &amp; Property</a> </li> </ul> </nav><nav class="footer-col" aria-label="Finance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/finance" data-astro-cid-sz7xmlte>Finance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/finance/momo" data-astro-cid-sz7xmlte>Mobile Money</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/finance/susu" data-astro-cid-sz7xmlte>Micro-Credit &amp; Susu</a> </li> </ul> </nav> <nav class="footer-col" aria-label="Support" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Support</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </nav> <nav class="footer-col" aria-label="Legal" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Legal</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a></li> <li data-astro-cid-sz7xmlte><a href="/refund-policy" data-astro-cid-sz7xmlte>Refunds</a></li> </ul> </nav> </div> <div class="container footer-bottom" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 Dataset Foundry.</p> </div> </footer>  </body></html> 

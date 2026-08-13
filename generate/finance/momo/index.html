@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic finance data — Mobile Money and Micro-Credit &#38; Susu Scoring live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+      Generate a Mobile Money fraud-signal dataset · Finance
+    </title><link rel="stylesheet" href="/assets/momo.D2JpjlxV.css">
+<link rel="stylesheet" href="/assets/account.BdDEimP_.css">
+<style>.seed-stamp[data-astro-cid-vvessfcc]{display:inline-flex;line-height:0}
+</style><script type="module" src="/assets/hoisted.BHOx168O.js"></script></head> <body> <!--
+      ROADMAP.md Phase 4.5.1 — platform strip. This is the
+      "frontfacing" piece of the platform pivot: a thin bar above the
+      current line family's header, present on every line-family
+      page, naming Dataset Foundry as the platform this family
+      belongs to and linking to the platform root at `/`. Deliberately
+      not a rebrand of the header itself (brand mark/wordmark below
+      stay this family's own brand) — see index.astro's own header
+      comment for the `/` <-> `/insurance` reversal. Omitted on the
+      platform page itself (variant="platform") — no reason to link a
+      page to itself.
+    -->
+    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
+          citable datasets across domains
+</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/finance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+⚒
+</span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Finance</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/finance" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/generate/finance/momo" data-astro-cid-3ef6ksr2>Mobile Money</a> </li><li data-astro-cid-3ef6ksr2> <a href="/generate/finance/susu" data-astro-cid-3ef6ksr2>Micro-Credit &amp; Susu</a> </li> </ul> </div><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Methodology <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/methodology/finance/momo" data-astro-cid-3ef6ksr2>Mobile Money</a> </li><li data-astro-cid-3ef6ksr2> <a href="/methodology/finance/susu" data-astro-cid-3ef6ksr2>Micro-Credit &amp; Susu</a> </li> </ul> </div> </nav> <div class="header-auth" data-astro-cid-3ef6ksr2> <a href="/login" id="header-login-link" data-astro-cid-3ef6ksr2>Log in</a> <a href="/institution" id="header-institution-link" hidden data-astro-cid-3ef6ksr2>
+Institution
+</a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
+Log out
+</button> </div> </div> </header>   <main>  <section class="section-dark intro" data-astro-cid-54ozfthc> <div class="container" data-astro-cid-54ozfthc> <span class="eyebrow" data-astro-cid-54ozfthc>The tool</span> <h1 data-astro-cid-54ozfthc>Forge a Mobile Money fraud-signal dataset</h1> <p class="muted lede" data-astro-cid-54ozfthc>
+Choose how many transaction records you want and a seed. The same two
+        numbers will always produce the same dataset — write the seed down and
+        cite it in your methodology chapter.
+</p> </div> </section> <section class="section-ledger tool-section" data-astro-cid-54ozfthc> <div class="container" data-astro-cid-54ozfthc> <div class="ledger-card" data-astro-cid-54ozfthc> <p class="preview-banner" id="preview-banner" hidden data-astro-cid-54ozfthc>
+Previewing without an account — capped at 20 rows, 1 request per IP
+          every 6 hours, no citation/checksum/manifest.
+<a href="/login" data-astro-cid-54ozfthc>Log in</a> or
+<a href="/register" data-astro-cid-54ozfthc>create a free account</a> for up to 100 rows
+          plus full provenance.
+</p> <form id="generator-form" data-astro-cid-54ozfthc> <div class="field-row" data-astro-cid-54ozfthc> <div class="field" data-astro-cid-54ozfthc> <label for="n" data-astro-cid-54ozfthc>Number of records</label> <input type="number" id="n" name="n" min="10" max="20000" step="10" value="5000" required data-astro-cid-54ozfthc> <p class="field-hint muted" id="n-hint" data-astro-cid-54ozfthc>
+Capped at 20,000 — the API generates synchronously (see
+                ROADMAP.md Phase 1 for the planned async path beyond that).
+</p> </div> <div class="field" data-astro-cid-54ozfthc> <label for="seed" data-astro-cid-54ozfthc>Seed</label> <input type="number" id="seed" name="seed" min="0" max="4294967295" step="1" value="42" required data-astro-cid-54ozfthc> </div> <div class="field stamp-field" data-astro-cid-54ozfthc> <label data-astro-cid-54ozfthc>Seed stamp</label> <div class="seed-stamp" id="live-stamp" data-size="56" data-astro-cid-vvessfcc><svg viewBox="0 0 56 56" width="56" height="56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deterministic seed stamp">
+  <circle cx="28" cy="28" r="28" fill="none" stroke="var(--brass, #C9A227)" stroke-width="1" opacity="0.5" />
+  <polygon points="28.0,4.1 30.3,13.6 36.7,1.2 36.6,11.2 40.9,10.2 39.0,17.0 49.6,12.3 42.2,20.8 52.2,20.1 43.7,25.5 49.9,28.0 44.1,30.5 51.0,35.5 44.0,36.2 47.6,42.3 41.2,41.2 41.3,46.3 34.8,41.3 36.9,55.4 30.6,44.4 28.0,52.8 25.1,46.3 20.6,50.7 19.8,44.0 13.4,48.1 15.6,40.4 8.9,41.9 13.0,35.7 2.9,36.2 13.1,30.4 -0.1,28.0 11.4,25.4 3.3,20.0 15.1,21.5 8.8,14.1 16.2,16.2 12.7,7.0 20.2,12.7 19.9,3.1 25.3,10.8" fill="var(--ember, #E8734A)" stroke="var(--brass, #C9A227)" stroke-width="1.5" />
+  <circle cx="28" cy="28" r="9.240000000000002" fill="var(--forge-charcoal, #1C1A19)" stroke="var(--brass, #C9A227)" stroke-width="1" />
+  <circle cx="34.6" cy="42.6" r="1.1" fill="var(--paper, #F2EDE4)" opacity="0.9" />
+  <circle cx="31.2" cy="43.6" r="1.1" fill="var(--paper, #F2EDE4)" opacity="0.9" />
+  <circle cx="37.2" cy="41.1" r="1.1" fill="var(--paper, #F2EDE4)" opacity="0.9" />
+  <circle cx="16.5" cy="39.1" r="1.1" fill="var(--paper, #F2EDE4)" opacity="0.9" />
+</svg></div>  </div> </div> <div class="field-row" data-astro-cid-54ozfthc> <div class="field" data-astro-cid-54ozfthc> <label for="transaction-window-start" data-astro-cid-54ozfthc>Transaction window start</label> <input type="date" id="transaction-window-start" name="transactionWindowStart" data-astro-cid-54ozfthc> </div> <div class="field" data-astro-cid-54ozfthc> <label for="transaction-window-end" data-astro-cid-54ozfthc>Transaction window end</label> <input type="date" id="transaction-window-end" name="transactionWindowEnd" data-astro-cid-54ozfthc> </div> <div class="field" data-astro-cid-54ozfthc> <p class="field-hint muted" data-astro-cid-54ozfthc>
+Optional — leave both blank for the default (30 days from
+                2024-01-01). Transactions are granular, sub-day events, so this
+                line defaults to a much narrower window than an insurance line's
+                policy-year span. Transaction timestamps are spread across this
+                range; end must be after start.
+</p> </div> </div> <div class="form-actions" data-astro-cid-54ozfthc> <button type="submit" class="btn btn-primary" id="generate-btn" data-astro-cid-54ozfthc>Generate dataset</button> <button type="button" class="btn btn-outline" id="download-btn" disabled data-astro-cid-54ozfthc>Download CSV</button> <button type="button" class="btn btn-outline" id="random-seed-btn" data-astro-cid-54ozfthc>Randomize seed</button> </div> </form> <details class="advanced-panel" id="advanced-panel" data-astro-cid-54ozfthc> <summary data-astro-cid-54ozfthc>Advanced: customize the model</summary> <p class="muted advanced-intro" data-astro-cid-54ozfthc>
+Same directional relationships described in the
+<a href="/methodology/finance/momo" data-astro-cid-54ozfthc>methodology</a> — strengthen,
+            weaken, or rebalance them here without touching any code. Defaults are
+            illustrative, anchored against publicly-documented Mobile Money fraud
+            typologies, not derived from real transaction data.
+</p> <div class="advanced-group" data-astro-cid-54ozfthc> <h4 data-astro-cid-54ozfthc>Fraud risk (single-stage)</h4> <p class="muted small" data-astro-cid-54ozfthc>
+Momo has no separate severity stage — every factor below feeds one
+              logistic model over <span class="mono" data-astro-cid-54ozfthc>is_fraudulent</span>. Raise
+              or lower a loading to strengthen or weaken that hypothesis.
+</p> <div class="advanced-grid" id="fraud-fields" data-astro-cid-54ozfthc></div> </div> <button type="button" class="btn btn-outline" id="reset-advanced-btn" data-astro-cid-54ozfthc>Reset to defaults</button> </details> <p id="status-line" class="mono status-line" role="status" data-astro-cid-54ozfthc></p> <div id="results" hidden data-astro-cid-54ozfthc> <hr class="rule" data-astro-cid-54ozfthc> <h3 data-astro-cid-54ozfthc>Cite this dataset</h3> <p class="muted" data-astro-cid-54ozfthc>
+This is a specific, reproducible dataset — seed, record count,
+            generator version, and any advanced-config changes are all part of
+            what makes it citable. Copy a citation below, or download the full
+            provenance manifest for a supervisor or reviewer to verify against.
+</p> <div class="citation-block" id="citation-block" data-astro-cid-54ozfthc> <div class="citation-tab-buttons" id="citation-tab-buttons" role="tablist" data-astro-cid-54ozfthc> <button type="button" class="citation-tab-btn" data-format="apa" data-astro-cid-54ozfthc>APA</button> <button type="button" class="citation-tab-btn" data-format="mla" data-astro-cid-54ozfthc>MLA</button> <button type="button" class="citation-tab-btn" data-format="chicago" data-astro-cid-54ozfthc>Chicago</button> <button type="button" class="citation-tab-btn" data-format="bibtex" data-astro-cid-54ozfthc>BibTeX</button> </div> <pre class="citation-text mono" id="citation-text" data-astro-cid-54ozfthc></pre> <div class="citation-actions" data-astro-cid-54ozfthc> <button type="button" class="btn btn-outline" id="copy-citation-btn" data-astro-cid-54ozfthc>Copy citation</button> <button type="button" class="btn btn-outline" id="download-manifest-btn" data-astro-cid-54ozfthc>Download manifest.json</button> <span class="mono checksum-line" id="checksum-line" data-astro-cid-54ozfthc></span> </div> </div> <details class="data-dictionary-panel" id="data-dictionary-panel" data-astro-cid-54ozfthc> <summary data-astro-cid-54ozfthc>Data dictionary (<span id="dict-count" data-astro-cid-54ozfthc>0</span> columns)</summary> <div class="table-scroll" data-astro-cid-54ozfthc> <table class="data-dictionary-table" id="data-dictionary-table" data-astro-cid-54ozfthc> <thead data-astro-cid-54ozfthc> <tr data-astro-cid-54ozfthc> <th data-astro-cid-54ozfthc>Column</th> <th data-astro-cid-54ozfthc>Type</th> <th data-astro-cid-54ozfthc>Unit</th> <th data-astro-cid-54ozfthc>Description</th> </tr> </thead> <tbody id="data-dictionary-body" data-astro-cid-54ozfthc></tbody> </table> </div> </details> <hr class="rule" data-astro-cid-54ozfthc> <h3 data-astro-cid-54ozfthc>Hypothesis check</h3> <p class="muted" data-astro-cid-54ozfthc>
+Directional confirmation on this batch — sign and rough magnitude
+            should match, exact numbers will vary run to run except when the
+            seed is held fixed. These four hypotheses are on fraud
+<strong data-astro-cid-54ozfthc>probability</strong> directly — momo has no severity stage the
+            way an insurance line's claim-cost side has (see the methodology page).
+            Agent cash-out channel is scoped to
+<span class="mono" data-astro-cid-54ozfthc>Cash-Out</span> rows only, and needs a larger batch
+            than the other three hypotheses to look stable — it's the weakest of the
+            four loadings, measurable only on the ~8% of rows that are Cash-Out, so
+            generate at least 20,000 records if that card looks noisy.
+</p> <div class="stat-grid" id="stat-grid" data-astro-cid-54ozfthc></div> <hr class="rule" data-astro-cid-54ozfthc> <h3 data-astro-cid-54ozfthc>
+Preview <span class="muted mono" data-astro-cid-54ozfthc>(first 15 rows, key columns)</span> </h3> <div class="table-scroll" data-astro-cid-54ozfthc> <table class="data-preview" id="preview-table" data-astro-cid-54ozfthc> <thead id="preview-head" data-astro-cid-54ozfthc></thead> <tbody id="preview-body" data-astro-cid-54ozfthc></tbody> </table> </div> </div> </div> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-top" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <p class="footer-brand-name mono" data-astro-cid-sz7xmlte> <a href="/" data-astro-cid-sz7xmlte>Dataset Foundry</a> </p> <p class="mono footer-tagline" data-astro-cid-sz7xmlte> Finance — synthetic data for research, not real policyholder data. </p> </div> <nav class="footer-col" aria-label="Insurance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/insurance" data-astro-cid-sz7xmlte>Insurance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/insurance/motor" data-astro-cid-sz7xmlte>Motor</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/life" data-astro-cid-sz7xmlte>Life</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/health-claims" data-astro-cid-sz7xmlte>Health</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/property" data-astro-cid-sz7xmlte>Home &amp; Property</a> </li> </ul> </nav><nav class="footer-col" aria-label="Finance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/finance" data-astro-cid-sz7xmlte>Finance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/finance/momo" data-astro-cid-sz7xmlte>Mobile Money</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/finance/susu" data-astro-cid-sz7xmlte>Micro-Credit &amp; Susu</a> </li> </ul> </nav> <nav class="footer-col" aria-label="Support" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Support</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </nav> <nav class="footer-col" aria-label="Legal" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Legal</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a></li> <li data-astro-cid-sz7xmlte><a href="/refund-policy" data-astro-cid-sz7xmlte>Refunds</a></li> </ul> </nav> </div> <div class="container footer-bottom" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 Dataset Foundry.</p> </div> </footer>  </body></html>  
