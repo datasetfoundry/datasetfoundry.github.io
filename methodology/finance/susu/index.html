@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic finance data — Mobile Money and Micro-Credit &#38; Susu Scoring live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
       Micro-Credit &amp; Susu Scoring methodology · Finance
-    </title><style>.intro[data-astro-cid-dv5ojvli]{padding:72px 0 56px}.lede[data-astro-cid-dv5ojvli]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-dv5ojvli]{padding-bottom:100px}.doc-grid[data-astro-cid-dv5ojvli] article[data-astro-cid-dv5ojvli]{max-width:74ch}h2[data-astro-cid-dv5ojvli]{margin-top:2em}code[data-astro-cid-dv5ojvli].mono{font-family:var(--font-mono);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:1px 5px;font-size:.88em}.assumptions-table[data-astro-cid-dv5ojvli]{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}.assumptions-table[data-astro-cid-dv5ojvli] th[data-astro-cid-dv5ojvli],.assumptions-table[data-astro-cid-dv5ojvli] td[data-astro-cid-dv5ojvli]{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}.assumptions-table[data-astro-cid-dv5ojvli] th[data-astro-cid-dv5ojvli]{font-family:var(--font-mono);text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;color:var(--ink-muted)}ol[data-astro-cid-dv5ojvli],ul[data-astro-cid-dv5ojvli]{padding-left:1.3em}li[data-astro-cid-dv5ojvli]{margin-bottom:.6em}
+    </title><style>.intro[data-astro-cid-dv5ojvli]{padding:72px 0 56px}.lede[data-astro-cid-dv5ojvli]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-dv5ojvli]{padding-bottom:100px}.doc-grid[data-astro-cid-dv5ojvli] article[data-astro-cid-dv5ojvli]{max-width:74ch}h2[data-astro-cid-dv5ojvli]{margin-top:2em}code[data-astro-cid-dv5ojvli].mono{font-family:var(--font-mono);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:1px 5px;font-size:.88em}.assumptions-table[data-astro-cid-dv5ojvli]{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}.assumptions-table[data-astro-cid-dv5ojvli] th[data-astro-cid-dv5ojvli],.assumptions-table[data-astro-cid-dv5ojvli] td[data-astro-cid-dv5ojvli]{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}.assumptions-table[data-astro-cid-dv5ojvli] th[data-astro-cid-dv5ojvli]{font-family:var(--font-mono);text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;color:var(--ink-muted)}.small-tag[data-astro-cid-dv5ojvli]{font-size:.68rem;font-weight:400;text-transform:uppercase;color:var(--ink-muted);letter-spacing:.04em}ol[data-astro-cid-dv5ojvli],ul[data-astro-cid-dv5ojvli]{padding-left:1.3em}li[data-astro-cid-dv5ojvli]{margin-bottom:.6em}
 </style>
-<link rel="stylesheet" href="/assets/account.BdDEimP_.css"><script type="module" src="/assets/hoisted.CR-FWJQ2.js"></script></head> <body> <!--
+<link rel="stylesheet" href="/assets/account.Dq1ErbjH.css"><script type="module" src="/assets/hoisted.DltLd23E.js"></script></head> <body> <!--
       ROADMAP.md Phase 4.5.1 — platform strip. This is the
       "frontfacing" piece of the platform pivot: a thin bar above the
       current line family's header, present on every line-family
@@ -34,8 +34,8 @@ This page is meant to be citable directly in a methodology chapter.
         Everything below is a design decision, not a discovery — Dataset Foundry
         does not model real Ghanaian susu-group or microfinance data, it encodes
         a documented set of assumptions about how loan- and borrower-history
-        factors should relate to default and recovery outcomes, so the
-        relationships can be recovered and used to teach or test statistical
+        factors should relate to default and, optionally, recovery outcomes, so
+        the relationships can be recovered and used to teach or test statistical
         methods. This line sits alongside
 <a href="/methodology/finance/momo" data-astro-cid-dv5ojvli>Mobile Money</a> under the finance
         family, but it mirrors the
@@ -44,47 +44,69 @@ This page is meant to be citable directly in a methodology chapter.
 <a href="/methodology/insurance/health-claims" data-astro-cid-dv5ojvli>health</a>, and
 <a href="/methodology/insurance/property" data-astro-cid-dv5ojvli>Home & Property</a> lines'
         two-stage model rather than momo's single-stage one — see section 1 for why.
-</p> </div> </section> <section class="section-ledger doc" data-astro-cid-dv5ojvli> <div class="container doc-grid" data-astro-cid-dv5ojvli> <article data-astro-cid-dv5ojvli> <h2 data-astro-cid-dv5ojvli>1. Two-stage model</h2> <p data-astro-cid-dv5ojvli>
-Every loan record is generated in two stages, Home & Property's shape
-          rather than momo's single-stage fraud label — a loan defaulting or not
-          is genuinely a different question from how much is lost once it does,
-          the same "did it happen" / "how bad was it" split every insurance line
-          on this platform uses:
+        Like <a href="/methodology/health/breast-cancer" data-astro-cid-dv5ojvli>Breast Cancer</a>, which stage count to generate (<strong data-astro-cid-dv5ojvli>single</strong> vs.
+<strong data-astro-cid-dv5ojvli>two-stage</strong>) is itself a runtime choice, not a fixed
+        shape.
+</p> </div> </section> <section class="section-ledger doc" data-astro-cid-dv5ojvli> <div class="container doc-grid" data-astro-cid-dv5ojvli> <article data-astro-cid-dv5ojvli> <h2 data-astro-cid-dv5ojvli>1. Toggleable one- or two-stage model</h2> <p data-astro-cid-dv5ojvli>
+Every loan record starts from the same first stage. What happens after
+          depends on the <code class="mono" data-astro-cid-dv5ojvli>stage_mode</code> you choose on the
+<a href="/generate/finance/susu" data-astro-cid-dv5ojvli>generator page</a> — the same "did
+          it happen" / "how bad was it" split every insurance line on this platform
+          uses:
 </p> <ol data-astro-cid-dv5ojvli> <li data-astro-cid-dv5ojvli> <strong data-astro-cid-dv5ojvli>Default probability</strong> — whether the loan defaults before
             maturity is <em data-astro-cid-dv5ojvli>table-rated</em>, life's/health's/property's
             technique. A loan-purpose base default rate
             (Business/Housing/Education/Health/ Other) is the actuarial anchor;
             missed-contribution history and occupation-sector informality each
             apply a multiplicative loading on top, with region as a third,
-            decorative loading playing the same role property's <code class="mono" data-astro-cid-dv5ojvli>region_flood_loading</code> plays on its own frequency side.
-</li> <li data-astro-cid-dv5ojvli> <strong data-astro-cid-dv5ojvli>Loss given default</strong> — for loans that do default, the unrecovered
-            fraction of principal is a log-normal draw, property's "multiple of a
-            principal/sum field" technique, capped at 1.0x
-<code class="mono" data-astro-cid-dv5ojvli>loan_principal_ghs</code> the same way property's payout
-            is capped at 1.0x sum insured. Group guarantee presence and loan-to-savings
+            decorative loading playing the same role property's <code class="mono" data-astro-cid-dv5ojvli>region_flood_loading</code> plays on its own frequency side. This logic is
+<strong data-astro-cid-dv5ojvli>identical in both stage modes</strong> and is computed before
+<code class="mono" data-astro-cid-dv5ojvli>stage_mode</code> is even consulted — single-stage's
+            entire output, and stage one of two-stage.
+</li> <li data-astro-cid-dv5ojvli> <strong data-astro-cid-dv5ojvli>Loss given default</strong> (two-stage only, computed only for
+            loans that default) — the unrecovered fraction of principal is a log-normal
+            draw, property's "multiple of a principal/sum field" technique, capped
+            at 1.0x <code class="mono" data-astro-cid-dv5ojvli>loan_principal_ghs</code> the same way property's
+            payout is capped at 1.0x sum insured. Group guarantee presence and loan-to-savings
             ratio are the two core severity drivers; loan purpose and susu group type
             each apply a decorative multiplier on top, property's claim-category/property-type
             pattern.
 </li> </ol> <p data-astro-cid-dv5ojvli>
+Single-stage produces the default-probability columns only —
+<code class="mono" data-astro-cid-dv5ojvli>group_guarantee</code>,
+<code class="mono" data-astro-cid-dv5ojvli>loan_to_savings_ratio</code>, and
+<code class="mono" data-astro-cid-dv5ojvli>loss_given_default_ghs</code> are entirely absent from
+          the output in this mode, not null-filled.
+<strong data-astro-cid-dv5ojvli>Two-stage is the default</strong> — same "default the richer shape,
+          allow opting down" reasoning the include-names toggle uses on every other
+          line. Whichever mode you pick is recorded in the dataset's manifest and
+          citation — two downloads of this line in different modes are, citation-wise,
+          two different datasets, since a single-stage download simply has no loss-given-default
+          columns at all.
+</p> <p data-astro-cid-dv5ojvli>
 Like property, this line puts two of its four core hypotheses on each
           stage, rather than all four loading onto one the way motor, life, and
           health each do.
 </p> <h2 data-astro-cid-dv5ojvli>2. The four hypotheses</h2> <p data-astro-cid-dv5ojvli>
-Two hypotheses drive whether a loan defaults at all; the other two
-          drive how much is actually lost once it does — tracked separately
-          below, since averaging them into one undifferentiated table would
-          obscure which stage each factor actually acts on.
-</p> <table class="assumptions-table" data-astro-cid-dv5ojvli> <thead data-astro-cid-dv5ojvli> <tr data-astro-cid-dv5ojvli><th data-astro-cid-dv5ojvli>Factor</th><th data-astro-cid-dv5ojvli>Stage</th><th data-astro-cid-dv5ojvli>Direction</th><th data-astro-cid-dv5ojvli>Rationale encoded</th></tr> </thead> <tbody data-astro-cid-dv5ojvli> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Missed-contribution history</td> <td data-astro-cid-dv5ojvli>Default probability</td> <td data-astro-cid-dv5ojvli>Positive</td> <td data-astro-cid-dv5ojvli>A member's own record of showing up with their susu
+Two hypotheses drive whether a loan defaults at all and hold in both
+          stage modes, since stage-one logic doesn't change based on the toggle;
+          the other two drive how much is actually lost once a default occurs,
+          and only exist — and are only verified — in two-stage mode, scoped to
+          records where <code class="mono" data-astro-cid-dv5ojvli>default_occurred === 1</code>.
+          Tracked separately below rather than in one undifferentiated table,
+          since which mode a factor actually applies in is the thing a reader
+          needs disambiguated.
+</p> <table class="assumptions-table" data-astro-cid-dv5ojvli> <thead data-astro-cid-dv5ojvli> <tr data-astro-cid-dv5ojvli><th data-astro-cid-dv5ojvli>Factor</th><th data-astro-cid-dv5ojvli>Stage</th><th data-astro-cid-dv5ojvli>Direction</th><th data-astro-cid-dv5ojvli>Rationale encoded</th></tr> </thead> <tbody data-astro-cid-dv5ojvli> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Missed-contribution history</td> <td data-astro-cid-dv5ojvli>Default probability <span class="mono small-tag" data-astro-cid-dv5ojvli>both modes</span></td> <td data-astro-cid-dv5ojvli>Positive</td> <td data-astro-cid-dv5ojvli>A member's own record of showing up with their susu
                 contribution is the closest thing an informal lending scheme has
                 to a credit-bureau record — the observable proxy microfinance
-                institutions actually use in the absence of formal credit data.</td> </tr> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Occupation-sector informality</td> <td data-astro-cid-dv5ojvli>Default probability</td> <td data-astro-cid-dv5ojvli>Positive</td> <td data-astro-cid-dv5ojvli>Informal-sector income is more volatile than formal-sector wage
+                institutions actually use in the absence of formal credit data.</td> </tr> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Occupation-sector informality</td> <td data-astro-cid-dv5ojvli>Default probability <span class="mono small-tag" data-astro-cid-dv5ojvli>both modes</span></td> <td data-astro-cid-dv5ojvli>Positive</td> <td data-astro-cid-dv5ojvli>Informal-sector income is more volatile than formal-sector wage
                 income, a documented driver of microfinance default — a coarser,
                 less-current signal than the borrower's own recent contribution
-                behavior, so it carries the smaller of the two loadings.</td> </tr> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Group guarantee presence</td> <td data-astro-cid-dv5ojvli>Loss given default</td> <td data-astro-cid-dv5ojvli>Negative</td> <td data-astro-cid-dv5ojvli>The joint-liability mechanism classic group lending is built
+                behavior, so it carries the smaller of the two loadings.</td> </tr> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Group guarantee presence</td> <td data-astro-cid-dv5ojvli>Loss given default <span class="mono small-tag" data-astro-cid-dv5ojvli>two-stage only</span></td> <td data-astro-cid-dv5ojvli>Negative</td> <td data-astro-cid-dv5ojvli>The joint-liability mechanism classic group lending is built
                 around: fellow group members have a direct stake in recovering
                 part of the shortfall once a default has already happened, which
                 improves recovery rather than preventing the default in the
-                first place.</td> </tr> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Loan-to-savings ratio</td> <td data-astro-cid-dv5ojvli>Loss given default</td> <td data-astro-cid-dv5ojvli>Positive</td> <td data-astro-cid-dv5ojvli>A loan sized well beyond what the borrower has actually
+                first place.</td> </tr> <tr data-astro-cid-dv5ojvli> <td data-astro-cid-dv5ojvli>Loan-to-savings ratio</td> <td data-astro-cid-dv5ojvli>Loss given default <span class="mono small-tag" data-astro-cid-dv5ojvli>two-stage only</span></td> <td data-astro-cid-dv5ojvli>Positive</td> <td data-astro-cid-dv5ojvli>A loan sized well beyond what the borrower has actually
                 accumulated in the susu fund leaves less of the borrower's own
                 money on the table to recover against — thinner collateral,
                 larger eventual loss.</td> </tr> </tbody> </table> <p data-astro-cid-dv5ojvli>
@@ -100,8 +122,8 @@ Default probability is modeled as
 <code class="mono" data-astro-cid-dv5ojvli>p = clip(base_rate(loan_purpose) · missed_contributions_loading ·
             occupation_sector_loading · region_loading, min_probability,
             max_probability)</code>, where <code class="mono" data-astro-cid-dv5ojvli>base_rate(loan_purpose)</code> is the loan-purpose
-          base-rate table lookup, <code class="mono" data-astro-cid-dv5ojvli>missed_contributions_loading</code> is a banded multiplier on missed-contribution ratio, <code class="mono" data-astro-cid-dv5ojvli>occupation_sector_loading</code> applies by occupation sector, and <code class="mono" data-astro-cid-dv5ojvli>region_loading</code> is the decorative region term. Loss given default, when a default occurs,
-          is modeled as
+          base-rate table lookup, <code class="mono" data-astro-cid-dv5ojvli>missed_contributions_loading</code> is a banded multiplier on missed-contribution ratio, <code class="mono" data-astro-cid-dv5ojvli>occupation_sector_loading</code> applies by occupation sector, and <code class="mono" data-astro-cid-dv5ojvli>region_loading</code> is the decorative region term. When stage mode is two-stage, loss given
+          default, for loans that default, is modeled as
 <code class="mono" data-astro-cid-dv5ojvli>loss_given_default = min(loan_principal_ghs · exp(log_base +
             log(group_guarantee_multiplier) + loan_to_savings_coef ·
             loan_to_savings_ratio + log(loan_purpose_multiplier) +
@@ -171,4 +193,4 @@ Something like: <em data-astro-cid-dv5ojvli>"Synthetic data generated using Data
           from the tool alone — or use the auto-generated citation block on the
 <a href="/generate/finance/susu" data-astro-cid-dv5ojvli>generator page</a>, which
           also includes the generator version and any advanced-config changes.
-</p> </article> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-top" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <p class="footer-brand-name mono" data-astro-cid-sz7xmlte> <a href="/" data-astro-cid-sz7xmlte>Dataset Foundry</a> </p> <p class="mono footer-tagline" data-astro-cid-sz7xmlte> Finance — synthetic data for research, not real policyholder data. </p> </div> <nav class="footer-col" aria-label="Insurance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/insurance" data-astro-cid-sz7xmlte>Insurance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/insurance/motor" data-astro-cid-sz7xmlte>Motor</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/life" data-astro-cid-sz7xmlte>Life</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/health-claims" data-astro-cid-sz7xmlte>Health</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/property" data-astro-cid-sz7xmlte>Home &amp; Property</a> </li> </ul> </nav><nav class="footer-col" aria-label="Finance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/finance" data-astro-cid-sz7xmlte>Finance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/finance/momo" data-astro-cid-sz7xmlte>Mobile Money</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/finance/susu" data-astro-cid-sz7xmlte>Micro-Credit &amp; Susu</a> </li> </ul> </nav> <nav class="footer-col" aria-label="Support" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Support</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </nav> <nav class="footer-col" aria-label="Legal" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Legal</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a></li> <li data-astro-cid-sz7xmlte><a href="/refund-policy" data-astro-cid-sz7xmlte>Refunds</a></li> </ul> </nav> </div> <div class="container footer-bottom" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 Dataset Foundry.</p> </div> </footer>  </body></html> 
+</p> </article> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-top" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <p class="footer-brand-name mono" data-astro-cid-sz7xmlte> <a href="/" data-astro-cid-sz7xmlte>Dataset Foundry</a> </p> <p class="mono footer-tagline" data-astro-cid-sz7xmlte> Finance — synthetic data for research, not real policyholder data. </p> </div> <nav class="footer-col" aria-label="Insurance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/insurance" data-astro-cid-sz7xmlte>Insurance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/insurance/motor" data-astro-cid-sz7xmlte>Motor</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/life" data-astro-cid-sz7xmlte>Life</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/health-claims" data-astro-cid-sz7xmlte>Health</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/property" data-astro-cid-sz7xmlte>Home &amp; Property</a> </li> </ul> </nav><nav class="footer-col" aria-label="Finance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/finance" data-astro-cid-sz7xmlte>Finance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/finance/momo" data-astro-cid-sz7xmlte>Mobile Money</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/finance/susu" data-astro-cid-sz7xmlte>Micro-Credit &amp; Susu</a> </li> </ul> </nav><nav class="footer-col" aria-label="Health lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/health" data-astro-cid-sz7xmlte>Health</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/health/breast-cancer" data-astro-cid-sz7xmlte>Breast Cancer</a> </li> </ul> </nav> <nav class="footer-col" aria-label="Support" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Support</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </nav> <nav class="footer-col" aria-label="Legal" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Legal</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a></li> <li data-astro-cid-sz7xmlte><a href="/refund-policy" data-astro-cid-sz7xmlte>Refunds</a></li> </ul> </nav> </div> <div class="container footer-bottom" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 Dataset Foundry.</p> </div> </footer>  </body></html> 

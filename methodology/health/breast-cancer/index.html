@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+      Breast Cancer methodology · Health
+    </title><style>.intro[data-astro-cid-n2plypgz]{padding:72px 0 56px}.lede[data-astro-cid-n2plypgz]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-n2plypgz]{padding-bottom:100px}.doc-grid[data-astro-cid-n2plypgz] article[data-astro-cid-n2plypgz]{max-width:74ch}h2[data-astro-cid-n2plypgz]{margin-top:2em}code[data-astro-cid-n2plypgz].mono{font-family:var(--font-mono);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:1px 5px;font-size:.88em}.small-tag[data-astro-cid-n2plypgz]{font-size:.72em;color:var(--ink-muted);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:1px 5px;margin-left:4px}.assumptions-table[data-astro-cid-n2plypgz]{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}.assumptions-table[data-astro-cid-n2plypgz] th[data-astro-cid-n2plypgz],.assumptions-table[data-astro-cid-n2plypgz] td[data-astro-cid-n2plypgz]{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}.assumptions-table[data-astro-cid-n2plypgz] th[data-astro-cid-n2plypgz]{font-family:var(--font-mono);text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;color:var(--ink-muted)}ol[data-astro-cid-n2plypgz],ul[data-astro-cid-n2plypgz]{padding-left:1.3em}li[data-astro-cid-n2plypgz]{margin-bottom:.6em}
+</style>
+<link rel="stylesheet" href="/assets/account.Dq1ErbjH.css"><script type="module" src="/assets/hoisted.DltLd23E.js"></script></head> <body> <!--
+      ROADMAP.md Phase 4.5.1 — platform strip. This is the
+      "frontfacing" piece of the platform pivot: a thin bar above the
+      current line family's header, present on every line-family
+      page, naming Dataset Foundry as the platform this family
+      belongs to and linking to the platform root at `/`. Deliberately
+      not a rebrand of the header itself (brand mark/wordmark below
+      stay this family's own brand) — see index.astro's own header
+      comment for the `/` <-> `/insurance` reversal. Omitted on the
+      platform page itself (variant="platform") — no reason to link a
+      page to itself.
+    -->
+    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
+          citable datasets across domains
+</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/health" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+⚒
+</span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Health</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/health" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/generate/health/breast-cancer" data-astro-cid-3ef6ksr2>Breast Cancer</a> </li> </ul> </div><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Methodology <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/methodology/health/breast-cancer" data-astro-cid-3ef6ksr2>Breast Cancer</a> </li> </ul> </div> </nav> <div class="header-auth" data-astro-cid-3ef6ksr2> <a href="/login" id="header-login-link" data-astro-cid-3ef6ksr2>Log in</a> <a href="/institution" id="header-institution-link" hidden data-astro-cid-3ef6ksr2>
+Institution
+</a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
+Log out
+</button> </div> </div> </header>   <main>  <section class="section-dark intro" data-astro-cid-n2plypgz> <div class="container" data-astro-cid-n2plypgz> <span class="eyebrow" data-astro-cid-n2plypgz>Methodology &middot; Breast Cancer</span> <h1 data-astro-cid-n2plypgz>What Dataset Foundry's Breast Cancer line actually does</h1> <p class="muted lede" data-astro-cid-n2plypgz>
+This page is meant to be citable directly in a methodology chapter.
+        Everything below is a design decision, not a discovery — Dataset Foundry
+        does not model real patient data, it encodes a documented set of
+        assumptions about how clinical and imaging risk factors should relate to
+        malignancy and, optionally, stage at diagnosis, so the relationships can
+        be recovered and used to teach or test statistical methods. This is the
+        first line in the new clinical <code class="mono" data-astro-cid-n2plypgz>health</code> family — it
+        doesn't share a family landing page with
+<a href="/methodology/insurance/motor" data-astro-cid-n2plypgz>insurance</a> or
+<a href="/methodology/finance/momo" data-astro-cid-n2plypgz>finance</a> yet — and it introduces
+        something none of those lines have: which stage count to generate (<strong data-astro-cid-n2plypgz>single</strong> vs. <strong data-astro-cid-n2plypgz>two-stage</strong>) is itself a runtime choice, not a
+        fixed shape. See section 1 for what that means.
+</p> </div> </section> <section class="section-ledger doc" data-astro-cid-n2plypgz> <div class="container doc-grid" data-astro-cid-n2plypgz> <article data-astro-cid-n2plypgz> <h2 data-astro-cid-n2plypgz>1. Toggleable one- or two-stage model</h2> <p data-astro-cid-n2plypgz>
+Every record starts from the same first stage. What happens after
+          depends on the <code class="mono" data-astro-cid-n2plypgz>stage_mode</code> you choose on the
+<a href="/generate/health/breast-cancer" data-astro-cid-n2plypgz>generator page</a>:
+</p> <ol data-astro-cid-n2plypgz> <li data-astro-cid-n2plypgz> <strong data-astro-cid-n2plypgz>Malignancy probability</strong> — whether this diagnostic workup's
+            finding is malignant or benign is <em data-astro-cid-n2plypgz>table-rated</em>, the same
+            technique life's/health-claims'/property's/susu's own
+            core-anchor-plus-loadings tables use. A patient-age-band base
+            malignancy yield is the anchor; family history, age at menarche,
+            parity, menopausal status combined with obesity, breast density,
+            mass margin, and tumor size each apply a multiplicative loading on
+            top, with region a further, decorative loading. This logic is
+<strong data-astro-cid-n2plypgz>identical in both stage modes</strong> and is computed before
+<code class="mono" data-astro-cid-n2plypgz>stage_mode</code> is even consulted — single-stage's
+            entire output, and stage one of two-stage.
+</li> <li data-astro-cid-n2plypgz> <strong data-astro-cid-n2plypgz>Stage at diagnosis</strong> (two-stage only, computed only where
+            a finding is malignant) — an I/II/III/IV severity measure modeled as a
+            continuous latent score (an intercept plus a weighted sum of tumor size,
+            detection pathway, receptor status, histologic grade, and a mild age effect,
+            plus noise) which is then bucketed into stage categories, the same "continuous
+            score, then bucket" technique this line's own banded-lookup helper uses
+            for its table lookups, applied once more here to produce an ordinal category
+            instead of a numeric loading.
+</li> </ol> <p data-astro-cid-n2plypgz>
+Single-stage is the classic diagnostic-classification shape — the
+          Wisconsin Diagnostic Breast Cancer dataset's own shape,
+          malignant-vs-benign only, no staging fields at all.
+<strong data-astro-cid-n2plypgz>Two-stage is the default</strong> — same "default the richer shape,
+          allow opting down" reasoning the include-names toggle uses on every other
+          line — and additionally reports
+<code class="mono" data-astro-cid-n2plypgz>detection_mode</code>, <code class="mono" data-astro-cid-n2plypgz>histologic_grade</code>, <code class="mono" data-astro-cid-n2plypgz>receptor_status</code>, and <code class="mono" data-astro-cid-n2plypgz>stage_at_diagnosis</code> for malignant rows (benign rows carry empty strings for all four, the
+          same "always present on the wire, empty-when-not-applicable" convention
+          property's <code class="mono" data-astro-cid-n2plypgz>claim_category</code>/susu's
+<code class="mono" data-astro-cid-n2plypgz>default_date</code> already use). Whichever mode you
+          pick is recorded in the dataset's manifest and citation — two downloads
+          of this line in different modes are, citation-wise, two different datasets,
+          since a single-stage download simply has no staging columns at all.
+</p> <p data-astro-cid-n2plypgz>
+Unlike every other line, this one carries no name field at all — a
+          diagnostic workup record has no natural person-name analogue the way a
+          policyholder or susu-group member does, so there's no include-names
+          toggle to speak of here.
+</p> <h2 data-astro-cid-n2plypgz>2. The four hypotheses</h2> <p data-astro-cid-n2plypgz>
+Two hypotheses drive malignancy probability and hold in both stage
+          modes, since stage-one logic doesn't change based on the toggle; the
+          other two are stage-at-diagnosis hypotheses that only exist, and are
+          only verified, in two-stage mode, scoped to malignant records —
+          property's/susu's own conditional-on-occurred technique for a
+          second-stage hypothesis. Tracked separately below rather than in one
+          undifferentiated table, since which mode a factor actually applies in
+          is the thing a reader needs disambiguated.
+</p> <table class="assumptions-table" data-astro-cid-n2plypgz> <thead data-astro-cid-n2plypgz> <tr data-astro-cid-n2plypgz><th data-astro-cid-n2plypgz>Factor</th><th data-astro-cid-n2plypgz>Stage</th><th data-astro-cid-n2plypgz>Direction</th><th data-astro-cid-n2plypgz>Rationale encoded</th></tr> </thead> <tbody data-astro-cid-n2plypgz> <tr data-astro-cid-n2plypgz> <td data-astro-cid-n2plypgz>Patient age</td> <td data-astro-cid-n2plypgz>Malignancy probability <span class="mono small-tag" data-astro-cid-n2plypgz>both modes</span></td> <td data-astro-cid-n2plypgz>Positive</td> <td data-astro-cid-n2plypgz>The single most robust, most consistently replicated
+                breast-cancer risk factor in the epidemiological literature —
+                every population-level study agrees on the direction even where
+                absolute rates differ, which is why it carries the base-rate
+                anchor itself rather than a loading on top of one.</td> </tr> <tr data-astro-cid-n2plypgz> <td data-astro-cid-n2plypgz>Family history (first-degree relative)</td> <td data-astro-cid-n2plypgz>Malignancy probability <span class="mono small-tag" data-astro-cid-n2plypgz>both modes</span></td> <td data-astro-cid-n2plypgz>Positive</td> <td data-astro-cid-n2plypgz>A first-degree relative's history roughly doubles risk in
+                pooled hormonal-factors literature — the second core hypothesis,
+                and the largest single loading in the malignancy table after
+                mass margin.</td> </tr> <tr data-astro-cid-n2plypgz> <td data-astro-cid-n2plypgz>Tumor size at diagnosis</td> <td data-astro-cid-n2plypgz>Stage severity <span class="mono small-tag" data-astro-cid-n2plypgz>two-stage only</span></td> <td data-astro-cid-n2plypgz>Positive</td> <td data-astro-cid-n2plypgz>Directly underlies the T-component of AJCC TNM staging — a
+                larger tumor is mechanically closer to a higher T-stage by the
+                staging system's own definition, not just correlated with one,
+                the more mechanistic of the two stage-severity hypotheses.
+                Reuses the same <code class="mono" data-astro-cid-n2plypgz>tumor_size_mm</code> draw already
+                used as a malignancy-probability loading — one field, two roles, susu's
+                loan-purpose/property's property-type reuse pattern.</td> </tr> <tr data-astro-cid-n2plypgz> <td data-astro-cid-n2plypgz>Detection pathway (symptomatic vs. screening-detected)</td> <td data-astro-cid-n2plypgz>Stage severity <span class="mono small-tag" data-astro-cid-n2plypgz>two-stage only</span></td> <td data-astro-cid-n2plypgz>Positive (symptomatic)</td> <td data-astro-cid-n2plypgz>Screening exists specifically to catch disease before symptoms
+                appear, so symptomatic (self-presented) cases are, by
+                construction, diagnosed further along their natural history than
+                screening-detected ones. This line's heavy symptomatic skew is
+                also what actually drives its stage distribution toward III/IV —
+                Ghana's low mammographic-screening uptake and Sub-Saharan
+                Africa's well-documented pattern of late, symptomatic
+                presentation (Vanderpuye et al., "Breast cancer management in
+                sub-Saharan Africa", 2017), not a population-level severity
+                assumption bolted on separately.</td> </tr> </tbody> </table> <p data-astro-cid-n2plypgz>
+All four hypotheses are verified at n=5,000, the same default motor,
+          health-claims, and property already use — checked empirically per
+          those lines' own precedent of not assuming n=5,000 holds without
+          checking. Both malignancy-side directions held comfortably across
+          every regression seed (age correlation never dropping below roughly
+          0.20, the weaker of the two); both stage-severity directions held too,
+          with the weaker of the two (tumor size vs. stage rank) never dropping
+          below roughly 0.35, and the malignant-only subset comfortably over
+          2,000 rows per seed at this n — nothing here needed momo's larger
+          n=20,000.
+</p> <h2 data-astro-cid-n2plypgz>3. Coefficients</h2> <p data-astro-cid-n2plypgz>
+Malignancy probability is modeled as
+<code class="mono" data-astro-cid-n2plypgz>p = clip(base_rate(age_band) · family_history_loading ·
+            menarche_loading · parity_loading · postmenopausal_obesity_loading ·
+            breast_density_loading · mass_margin_loading · tumor_size_loading ·
+            region_loading, min_probability, max_probability)</code>, where <code class="mono" data-astro-cid-n2plypgz>base_rate(age_band)</code> is the age-band base-malignancy-yield
+          table lookup and every other term is a named multiplicative loading — postmenopausal
+          obesity's loading applies only when menopausal status is post and BMI is
+          at or above a threshold (a gate, not a small effect, the same technique
+          momo's cash-out gate uses for its own conditional loading). A finding is
+          then drawn as malignant or benign from that probability. When the mode is
+          two-stage, stage at diagnosis (for malignant findings only) is modeled as
+          a continuous latent score,
+<code class="mono" data-astro-cid-n2plypgz>score = intercept + tumor_size_coef · tumor_size_mm +
+            detection_mode_loading + receptor_status_loading +
+            histologic_grade_loading + age_over_50_coef · max(patient_age - 50,
+            0) + ε</code>, then bucketed into stage I/II/III/IV via ascending score cutoffs
+          tuned so the detection-pathway skew above pushes the resulting
+          distribution toward stage II/III, consistent with the
+          late-presentation literature this line models. These coefficients are
+          illustrative, anchored against general breast-cancer epidemiology
+          literature (SEER Cancer Statistics; the Collaborative Group on
+          Hormonal Factors in Breast Cancer's pooled reanalyses; the BI-RADS
+          lexicon for mass-margin risk; Vanderpuye et al. 2017 and Jiagge et al.
+          2016 for the Sub-Saharan-Africa-specific detection and
+          receptor-subtype patterns), not derived from any real patient cohort's
+          own data. Exact magnitudes aren't published on this page — see the
+          current defaults, and change them, in the
+<strong data-astro-cid-n2plypgz>Advanced: customize the model</strong> panel on the
+<a href="/generate/health/breast-cancer" data-astro-cid-n2plypgz>Breast Cancer generator</a> if your thesis calls for weaker or stronger effects, and note in your
+          write-up which values you changed from the defaults. The score-to-stage
+          bucketing cutoffs themselves aren't exposed as editable fields — only the
+          score contributions feeding into them are.
+</p> <h2 data-astro-cid-n2plypgz>4. Determinism</h2> <p data-astro-cid-n2plypgz>
+Generation runs server-side using a seeded generator (numpy's
+<code class="mono" data-astro-cid-n2plypgz>default_rng</code>, PCG64) rather than an unseeded
+          source of randomness — same mechanism as every other line on the
+          platform. The same seed, record count, stage mode, generator version,
+          and any advanced-config changes (all stamped in every citation and
+          manifest — see the Cite section on the generator page) will always
+          reproduce byte-identical output. Report the seed, record count, and
+          stage mode alongside your dataset — that combination, together with
+          the generator version, is sufficient for anyone to regenerate exactly
+          what you analyzed.
+</p> <h2 data-astro-cid-n2plypgz>5. What's decorative vs. load-bearing</h2> <p data-astro-cid-n2plypgz>
+Region, age at menarche, parity, menopausal status/obesity, breast
+          density, mass margin, and — on the stage side — receptor status,
+          histologic grade, and the mild age-over-50 effect exist to make
+          records look like real diagnostic workups and are internally
+          consistent with each other, but they are not the object of the four
+          hypotheses above. Tumor size is the one field that plays a
+          load-bearing role on both sides at once — a malignancy-probability
+          loading and, unchanged, one of the two core stage-severity hypotheses
+          — rather than being load-bearing on one side and decorative on the
+          other. This line has no name field of any kind (subtask 0's decision —
+          see section 1), so unlike every other line there is no name-inclusion
+          toggle to gate.
+</p> <h2 data-astro-cid-n2plypgz>6. Known limitations</h2> <ul data-astro-cid-n2plypgz> <li data-astro-cid-n2plypgz>
+This is synthetic data. It should never be presented as, or mistaken
+            for, real patient or clinical data in a publication.
+</li> <li data-astro-cid-n2plypgz>
+Malignancy probability is table-rated with multiplicative loadings,
+            not a from-scratch regression — no interaction effects between
+            family history, menarche, parity, density, mass margin, and tumor
+            size are modeled beyond simple multiplication, unless you add them
+            yourself downstream.
+</li> <li data-astro-cid-n2plypgz>
+The age-band malignancy-yield anchor represents a biopsy-cohort
+            malignancy yield (roughly 10–50%, conditional on a workup already
+            having been triggered) — the same conditioning the reference
+            Wisconsin Diagnostic Breast Cancer dataset uses — not a
+            general-population incidence rate, which would be under 1% at every
+            age band. Don't read this dataset's malignancy rate as a population
+            incidence figure.
+</li> <li data-astro-cid-n2plypgz>
+Stage at diagnosis, receptor status, histologic grade, and detection
+            pathway are only present in two-stage mode and only for malignant
+            records — a single-stage download or a benign record simply has no
+            severity information, by design, not by omission.
+</li> <li data-astro-cid-n2plypgz>
+This line reports stage at diagnosis, not an outcome or mortality
+            field — late stage at diagnosis is the closest proxy this shape
+            carries for the region's well-documented mortality-to-incidence
+            pattern, not a direct model of it.
+</li> <li data-astro-cid-n2plypgz>
+If your thesis needs a different balance between the four
+            hypotheses, adjust the relevant loadings in the
+<strong data-astro-cid-n2plypgz>Advanced: customize the model</strong> panel on the
+<a href="/generate/health/breast-cancer" data-astro-cid-n2plypgz>Breast Cancer generator</a> and say so in your write-up.
+</li> </ul> <h2 data-astro-cid-n2plypgz>7. Citing this tool</h2> <p data-astro-cid-n2plypgz>
+Something like: <em data-astro-cid-n2plypgz>"Synthetic data generated using Dataset Foundry (seed = 42, n =
+            5,000, stage mode = two-stage), a deterministic Breast Cancer
+            diagnostic data generator built for this thesis in the absence of
+            accessible real-world clinical data."</em> Include the seed, record count, and stage mode so the exact dataset is
+          reproducible from the tool alone — or use the auto-generated citation block
+          on the
+<a href="/generate/health/breast-cancer" data-astro-cid-n2plypgz>generator page</a>,
+          which also includes the generator version, stage mode, and any
+          advanced-config changes.
+</p> </article> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-top" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <p class="footer-brand-name mono" data-astro-cid-sz7xmlte> <a href="/" data-astro-cid-sz7xmlte>Dataset Foundry</a> </p> <p class="mono footer-tagline" data-astro-cid-sz7xmlte> Health — synthetic data for research, not real policyholder data. </p> </div> <nav class="footer-col" aria-label="Insurance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/insurance" data-astro-cid-sz7xmlte>Insurance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/insurance/motor" data-astro-cid-sz7xmlte>Motor</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/life" data-astro-cid-sz7xmlte>Life</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/health-claims" data-astro-cid-sz7xmlte>Health</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/property" data-astro-cid-sz7xmlte>Home &amp; Property</a> </li> </ul> </nav><nav class="footer-col" aria-label="Finance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/finance" data-astro-cid-sz7xmlte>Finance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/finance/momo" data-astro-cid-sz7xmlte>Mobile Money</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/finance/susu" data-astro-cid-sz7xmlte>Micro-Credit &amp; Susu</a> </li> </ul> </nav><nav class="footer-col" aria-label="Health lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/health" data-astro-cid-sz7xmlte>Health</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/health/breast-cancer" data-astro-cid-sz7xmlte>Breast Cancer</a> </li> </ul> </nav> <nav class="footer-col" aria-label="Support" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Support</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </nav> <nav class="footer-col" aria-label="Legal" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Legal</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a></li> <li data-astro-cid-sz7xmlte><a href="/refund-policy" data-astro-cid-sz7xmlte>Refunds</a></li> </ul> </nav> </div> <div class="container footer-bottom" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 Dataset Foundry.</p> </div> </footer>  </body></html> 
