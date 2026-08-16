@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+      Crop Yield methodology · Agriculture
+    </title><style>.intro[data-astro-cid-uwzj6gts]{padding:72px 0 56px}.lede[data-astro-cid-uwzj6gts]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-uwzj6gts]{padding-bottom:100px}.doc-grid[data-astro-cid-uwzj6gts] article[data-astro-cid-uwzj6gts]{max-width:74ch}h2[data-astro-cid-uwzj6gts]{margin-top:2em}code[data-astro-cid-uwzj6gts].mono{font-family:var(--font-mono);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:1px 5px;font-size:.88em}.small-tag[data-astro-cid-uwzj6gts]{font-size:.72em;color:var(--ink-muted);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:1px 5px;margin-left:4px}.assumptions-table[data-astro-cid-uwzj6gts]{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}.assumptions-table[data-astro-cid-uwzj6gts] th[data-astro-cid-uwzj6gts],.assumptions-table[data-astro-cid-uwzj6gts] td[data-astro-cid-uwzj6gts]{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}.assumptions-table[data-astro-cid-uwzj6gts] th[data-astro-cid-uwzj6gts]{font-family:var(--font-mono);text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;color:var(--ink-muted)}ol[data-astro-cid-uwzj6gts],ul[data-astro-cid-uwzj6gts]{padding-left:1.3em}li[data-astro-cid-uwzj6gts]{margin-bottom:.6em}
+</style>
+<link rel="stylesheet" href="/assets/account.Dq1ErbjH.css"><script type="module" src="/assets/hoisted.DltLd23E.js"></script></head> <body> <!--
+      ROADMAP.md Phase 4.5.1 — platform strip. This is the
+      "frontfacing" piece of the platform pivot: a thin bar above the
+      current line family's header, present on every line-family
+      page, naming Dataset Foundry as the platform this family
+      belongs to and linking to the platform root at `/`. Deliberately
+      not a rebrand of the header itself (brand mark/wordmark below
+      stay this family's own brand) — see index.astro's own header
+      comment for the `/` <-> `/insurance` reversal. Omitted on the
+      platform page itself (variant="platform") — no reason to link a
+      page to itself.
+    -->
+    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
+          citable datasets across domains
+</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/agri" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+⚒
+</span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Agriculture</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/agri" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/generate/agri/crop-yield" data-astro-cid-3ef6ksr2>Crop Yield</a> </li> </ul> </div><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Methodology <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
+▾
+</span> </button> <ul class="nav-dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/methodology/agri/crop-yield" data-astro-cid-3ef6ksr2>Crop Yield</a> </li> </ul> </div> </nav> <div class="header-auth" data-astro-cid-3ef6ksr2> <a href="/login" id="header-login-link" data-astro-cid-3ef6ksr2>Log in</a> <a href="/institution" id="header-institution-link" hidden data-astro-cid-3ef6ksr2>
+Institution
+</a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
+Log out
+</button> </div> </div> </header>   <main>  <section class="section-dark intro" data-astro-cid-uwzj6gts> <div class="container" data-astro-cid-uwzj6gts> <span class="eyebrow" data-astro-cid-uwzj6gts>Methodology &middot; Crop Yield</span> <h1 data-astro-cid-uwzj6gts>What Dataset Foundry's Crop Yield line actually does</h1> <p class="muted lede" data-astro-cid-uwzj6gts>
+This page is meant to be citable directly in a methodology chapter.
+        Everything below is a design decision, not a discovery — Dataset Foundry
+        does not model real farm data, it encodes a documented set of
+        assumptions about how rainfall, soil conditions, and farm-level factors
+        should relate to whether a plot's yield falls short and, optionally, how
+        severe that shortfall is, so the relationships can be recovered and used
+        to teach or test statistical methods. This is the first line in the new
+<code class="mono" data-astro-cid-uwzj6gts>agri</code> family — it doesn't share a family landing
+        page with <a href="/methodology/insurance/motor" data-astro-cid-uwzj6gts>insurance</a>,
+<a href="/methodology/finance/momo" data-astro-cid-uwzj6gts>finance</a>, or
+<a href="/methodology/health/breast-cancer" data-astro-cid-uwzj6gts>health</a> yet — and it
+        carries the same runtime stage-count choice breast cancer introduced: which
+        stage count to generate (<strong data-astro-cid-uwzj6gts>single</strong> vs.
+<strong data-astro-cid-uwzj6gts>two-stage</strong>) is itself a request-time choice, not a fixed
+        shape. See section 1 for what that means.
+</p> </div> </section> <section class="section-ledger doc" data-astro-cid-uwzj6gts> <div class="container doc-grid" data-astro-cid-uwzj6gts> <article data-astro-cid-uwzj6gts> <h2 data-astro-cid-uwzj6gts>1. Toggleable one- or two-stage model</h2> <p data-astro-cid-uwzj6gts>
+Every record starts from the same first stage: one farm plot's single
+          growing-season observation, not a farm-level or district-level
+          aggregate. What happens after depends on the
+<code class="mono" data-astro-cid-uwzj6gts>stage_mode</code> you choose on the
+<a href="/generate/agri/crop-yield" data-astro-cid-uwzj6gts>generator page</a>:
+</p> <ol data-astro-cid-uwzj6gts> <li data-astro-cid-uwzj6gts> <strong data-astro-cid-uwzj6gts>Shortfall probability</strong> — whether this plot's realized
+            yield fell below its season-expected threshold is <em data-astro-cid-uwzj6gts>table-rated</em>, the same technique life's/health-claims'/property's/susu's/breast
+            cancer's own core-anchor-plus-loadings tables use. A crop-type base
+            shortfall rate is the anchor; rainfall deviation from the
+            agroecological zone's seasonal norm and soil-moisture deficit at the
+            crop's critical growth stage each apply a banded multiplicative
+            loading on top, with improved-seed-variety adoption, irrigation
+            access, plot size, region, and agroecological zone as further
+            loadings. This logic is <strong data-astro-cid-uwzj6gts>identical in both stage modes</strong>
+and is computed before <code class="mono" data-astro-cid-uwzj6gts>stage_mode</code> is even consulted
+            — single-stage's entire output, and stage one of two-stage.
+</li> <li data-astro-cid-uwzj6gts> <strong data-astro-cid-uwzj6gts>Yield-loss severity</strong> (two-stage only, computed only where
+            a shortfall occurred) — a percentage yield-loss measure modeled as a continuous
+            latent score (an intercept plus a weighted sum of rainfall-deficit magnitude,
+            a pest/disease-outbreak flag, delayed planting, and agroecological zone,
+            plus noise) run through a sigmoid transform and scaled to a 0-100% figure
+            — the first line since motor to reuse the platform's shared <code class="mono" data-astro-cid-uwzj6gts>sigmoid()</code> helper, chosen here over breast cancer's/susu's score-bucketing or log-normal-ratio
+            techniques because a percentage yield loss has a natural, symmetric ceiling
+            (100% — the whole crop) a sigmoid curve represents directly.
+</li> </ol> <p data-astro-cid-uwzj6gts>
+Single-stage reports shortfall occurrence only, no severity fields at
+          all. <strong data-astro-cid-uwzj6gts>Two-stage is the default</strong> — same "default the richer
+          shape, allow opting down" reasoning the include-names toggle uses on every
+          other line — and additionally reports
+<code class="mono" data-astro-cid-uwzj6gts>pest_disease_outbreak</code>, <code class="mono" data-astro-cid-uwzj6gts>delayed_planting</code>, and <code class="mono" data-astro-cid-uwzj6gts>yield_loss_pct</code> (non-shortfall rows carry
+<code class="mono" data-astro-cid-uwzj6gts>false</code>/<code class="mono" data-astro-cid-uwzj6gts>0.0</code> for these
+          three, since they're boolean/numeric rather than breast cancer's categorical
+          stage-side fields — susu's <code class="mono" data-astro-cid-uwzj6gts>loss_given_default_ghs</code> convention applies here instead of breast cancer's empty-string one).
+          Whichever mode you pick is recorded in the dataset's manifest and citation
+          — two downloads of this line in different modes are, citation-wise, two
+          different datasets, since a single-stage download simply has no severity
+          columns at all.
+</p> <p data-astro-cid-uwzj6gts>
+Unlike every other line except breast cancer, this one carries no name
+          field at all — a plot-season observation has no natural person-name
+          analogue the way a policyholder or susu-group member does, so there's
+          no include-names toggle to speak of here. Unlike every other line
+          including breast cancer, this one also doesn't yet accept a
+<code class="mono" data-astro-cid-uwzj6gts>country</code> parameter at all — rainfall reliability,
+          growing-season timing, and staple-crop mix genuinely differ by country (a
+          real basis for country-scoping this line eventually), but a second country's
+          own agroecological-zone and crop tables don't exist yet to select between,
+          so there's nothing for a country parameter to change today. The country
+          selector on the generator page shows Ghana only, honestly, rather than a
+          control that would silently do nothing if a second option were offered.
+</p> <h2 data-astro-cid-uwzj6gts>2. The four hypotheses</h2> <p data-astro-cid-uwzj6gts>
+Two hypotheses drive shortfall probability and hold in both stage
+          modes, since stage-one logic doesn't change based on the toggle; the
+          other two are yield-loss-severity hypotheses that only exist, and are
+          only verified, in two-stage mode, scoped to shortfall records —
+          property's/susu's/breast cancer's own conditional-on-occurred
+          technique for a second-stage hypothesis. Tracked separately below
+          rather than in one undifferentiated table, since which mode a factor
+          actually applies in is the thing a reader needs disambiguated.
+</p> <table class="assumptions-table" data-astro-cid-uwzj6gts> <thead data-astro-cid-uwzj6gts> <tr data-astro-cid-uwzj6gts><th data-astro-cid-uwzj6gts>Factor</th><th data-astro-cid-uwzj6gts>Stage</th><th data-astro-cid-uwzj6gts>Direction</th><th data-astro-cid-uwzj6gts>Rationale encoded</th></tr> </thead> <tbody data-astro-cid-uwzj6gts> <tr data-astro-cid-uwzj6gts> <td data-astro-cid-uwzj6gts>Rainfall deviation from zone seasonal norm</td> <td data-astro-cid-uwzj6gts>Shortfall probability <span class="mono small-tag" data-astro-cid-uwzj6gts>both modes</span></td> <td data-astro-cid-uwzj6gts>Negative (deeper deficit &rarr; higher probability)</td> <td data-astro-cid-uwzj6gts>The single most consistently documented driver of rainfed-crop
+                yield variability across the agronomy literature — FAO's
+                AquaCrop water-productivity framework treats water availability
+                as the dominant yield-limiting factor for rainfed systems. The
+                more mechanistic of the two core shortfall hypotheses, and why
+                it carries the widest loading spread in the shortfall
+                coefficient table.</td> </tr> <tr data-astro-cid-uwzj6gts> <td data-astro-cid-uwzj6gts>Soil-moisture deficit at critical growth stage</td> <td data-astro-cid-uwzj6gts>Shortfall probability <span class="mono small-tag" data-astro-cid-uwzj6gts>both modes</span></td> <td data-astro-cid-uwzj6gts>Positive</td> <td data-astro-cid-uwzj6gts>Water stress specifically during flowering/grain-fill is
+                repeatedly identified in crop-water-stress literature as the
+                single most yield-critical window for staple cereals — a real,
+                separate driver from total-season rainfall deviation (a season
+                can be near-normal on aggregate rainfall and still deliver a
+                damaging deficit during the few critical weeks that matter
+                most), the second core shortfall hypothesis, drawn independent
+                of rainfall deviation for tractability in this first version.</td> </tr> <tr data-astro-cid-uwzj6gts> <td data-astro-cid-uwzj6gts>Rainfall-deficit magnitude</td> <td data-astro-cid-uwzj6gts>Yield-loss severity <span class="mono small-tag" data-astro-cid-uwzj6gts>two-stage only</span></td> <td data-astro-cid-uwzj6gts>Positive</td> <td data-astro-cid-uwzj6gts>Carries through mechanically from stage one: a plot that missed
+                its shortfall threshold by a wide margin didn't just "have a
+                shortfall," it had a worse one — the more mechanistic of the two
+                stage-severity hypotheses. Reuses the same <code class="mono" data-astro-cid-uwzj6gts>rainfall_deviation_pct</code> draw already used as a shortfall-probability loading — one field,
+                two roles, susu's loan-purpose/property's property-type/breast cancer's
+                tumor-size reuse pattern.</td> </tr> <tr data-astro-cid-uwzj6gts> <td data-astro-cid-uwzj6gts>Pest/disease outbreak</td> <td data-astro-cid-uwzj6gts>Yield-loss severity <span class="mono small-tag" data-astro-cid-uwzj6gts>two-stage only</span></td> <td data-astro-cid-uwzj6gts>Positive</td> <td data-astro-cid-uwzj6gts>Drought-stressed crops are well documented to be more
+                susceptible to pest and disease pressure — West Africa's Fall
+                Armyworm spread across maize since 2016 is the concrete regional
+                instance of this compounding pattern repeatedly cited in the
+                literature on the outbreak's impact. Modeled as an independent
+                flat-rate draw rather than conditioned on the rainfall-deficit
+                draw itself, the same "real, separately documented driver,
+                correlation not modeled in this first version" simplification
+                the soil-moisture-deficit hypothesis above uses.</td> </tr> </tbody> </table> <p data-astro-cid-uwzj6gts>
+All four hypotheses are verified at n=5,000 for shortfall-side
+          quartile checks (motor's/health-claims'/property's/breast cancer's
+          default) and n=40,000 for the full directional-verification pass
+          reported alongside this line's own backend build — checked empirically
+          per those lines' own precedent of not assuming a given n holds without
+          checking. Both shortfall-side directions held comfortably across the
+          range tested (rainfall-deviation quartile shortfall rates falling from
+          roughly 31% to 9%, soil-moisture-deficit quartile rates rising from
+          roughly 14% to 24%); both severity-side directions held too (mean
+          yield loss falling from roughly 68% to 42% across the same
+          rainfall-deviation quartiles; pest/disease-outbreak rows averaging a
+          materially higher loss than rows without), with the shortfall-only
+          subset comfortably in the hundreds to low thousands of rows per seed
+          at these sample sizes — nothing here needed momo's larger n=20,000.
+</p> <h2 data-astro-cid-uwzj6gts>3. Coefficients</h2> <p data-astro-cid-uwzj6gts>
+Shortfall probability is modeled as
+<code class="mono" data-astro-cid-uwzj6gts>p = clip(base_rate(crop_type) · rainfall_deviation_loading ·
+            soil_moisture_deficit_loading · improved_seed_variety_loading ·
+            irrigation_access_loading · plot_size_loading · region_loading ·
+            zone_loading, min_probability, max_probability)</code>, where <code class="mono" data-astro-cid-uwzj6gts>base_rate(crop_type)</code> is the crop-type
+          base-shortfall-rate table lookup, <code class="mono" data-astro-cid-uwzj6gts>rainfall_deviation_loading</code>/<code class="mono" data-astro-cid-uwzj6gts>soil_moisture_deficit_loading</code> are banded lookups
+          on their respective continuous values, and every other term is a named multiplicative
+          loading — irrigation access's loading applies only where irrigation access
+          is true (a gate, not a small effect, the same technique breast cancer's
+          postmenopausal-obesity gate and momo's cash-out gate use for their own conditional
+          loadings). A shortfall is then drawn as occurred or not from that probability.
+          When the mode is two-stage, yield-loss percentage (for shortfall plots only)
+          is modeled as a continuous latent score run through a sigmoid transform,
+<code class="mono" data-astro-cid-uwzj6gts>score = intercept + rainfall_deficit_coef · max(0,
+            -rainfall_deviation_pct)/100 + pest_disease_outbreak_loading +
+            delayed_planting_loading + zone_loading + ε</code>, then <code class="mono" data-astro-cid-uwzj6gts>yield_loss_pct = clip(100 · sigmoid(score), min_pct, max_pct)</code>. These coefficients are illustrative, anchored against general
+          agronomy and crop-water-stress literature (FAO's AquaCrop framework;
+          CIMMYT/IITA drought-tolerant-maize adoption studies; the documented
+          regional impact of Fall Armyworm on West African maize since 2016),
+          not derived from any real farm-monitoring dataset's own data. Exact
+          magnitudes aren't published on this page — see the current defaults,
+          and change them, in the
+<strong data-astro-cid-uwzj6gts>Advanced: customize the model</strong> panel on the
+<a href="/generate/agri/crop-yield" data-astro-cid-uwzj6gts>Crop Yield generator</a> if
+          your thesis calls for weaker or stronger effects, and note in your write-up
+          which values you changed from the defaults.
+</p> <h2 data-astro-cid-uwzj6gts>4. Determinism</h2> <p data-astro-cid-uwzj6gts>
+Generation runs server-side using a seeded generator (numpy's
+<code class="mono" data-astro-cid-uwzj6gts>default_rng</code>, PCG64) rather than an unseeded
+          source of randomness — same mechanism as every other line on the
+          platform. The same seed, record count, stage mode, generator version,
+          and any advanced-config changes (all stamped in every citation and
+          manifest — see the Cite section on the generator page) will always
+          reproduce byte-identical output. Report the seed, record count, and
+          stage mode alongside your dataset — that combination, together with
+          the generator version, is sufficient for anyone to regenerate exactly
+          what you analyzed.
+</p> <h2 data-astro-cid-uwzj6gts>5. What's decorative vs. load-bearing</h2> <p data-astro-cid-uwzj6gts>
+Crop type, improved-seed-variety adoption, irrigation access, plot
+          size, region, and agroecological zone exist to make records look like
+          real farm-plot observations and are internally consistent with each
+          other, but they are not the object of the four hypotheses above.
+          Rainfall deviation is the one field that plays a load-bearing role on
+          both sides at once — a shortfall-probability loading and, unchanged,
+          one of the two core severity hypotheses — rather than being
+          load-bearing on one side and decorative on the other, the same dual
+          role tumor size plays in breast cancer's own coefficient tables. This
+          line has no name field of any kind and no country parameter yet
+          (section 1's own note), so unlike every other line there is neither a
+          name-inclusion toggle nor a meaningful country selector to gate.
+</p> <h2 data-astro-cid-uwzj6gts>6. Known limitations</h2> <ul data-astro-cid-uwzj6gts> <li data-astro-cid-uwzj6gts>
+This is synthetic data. It should never be presented as, or mistaken
+            for, real farm-monitoring or agronomic survey data in a publication.
+</li> <li data-astro-cid-uwzj6gts>
+Shortfall probability is table-rated with banded loadings and
+            multiplicative factors, not a from-scratch regression — no
+            interaction effects between rainfall deviation, soil-moisture
+            deficit, crop type, seed variety, irrigation access, and plot size
+            are modeled beyond simple multiplication, unless you add them
+            yourself downstream.
+</li> <li data-astro-cid-uwzj6gts>
+Rainfall deviation and soil-moisture deficit are drawn independently
+            of each other — a real, documented simplification, not an assertion
+            that the two are uncorrelated in practice.
+</li> <li data-astro-cid-uwzj6gts>
+Pest/disease outbreak and delayed planting are drawn independent of
+            the rainfall-deficit draw as flat-rate booleans, not conditioned on
+            how severe that season's drought was, even though the literature
+            this line cites documents drought stress as a real driver of
+            pest/disease susceptibility.
+</li> <li data-astro-cid-uwzj6gts>
+Pest/disease outbreak, delayed planting, and yield-loss percentage
+            are only present in two-stage mode and only meaningfully populated
+            for shortfall records — a single-stage download or a non-shortfall
+            record simply has no severity information, by design, not by
+            omission.
+</li> <li data-astro-cid-uwzj6gts>
+This line doesn't yet accept a <code class="mono" data-astro-cid-uwzj6gts>country</code>
+parameter — every record is implicitly Ghana-scoped today (see section
+            1). A second country's own zone/crop reference data is future work, not
+            represented here at all yet.
+</li> <li data-astro-cid-uwzj6gts>
+If your thesis needs a different balance between the four
+            hypotheses, adjust the relevant loadings in the
+<strong data-astro-cid-uwzj6gts>Advanced: customize the model</strong> panel on the
+<a href="/generate/agri/crop-yield" data-astro-cid-uwzj6gts>Crop Yield generator</a>
+and say so in your write-up.
+</li> </ul> <h2 data-astro-cid-uwzj6gts>7. Citing this tool</h2> <p data-astro-cid-uwzj6gts>
+Something like: <em data-astro-cid-uwzj6gts>"Synthetic data generated using Dataset Foundry (seed = 42, n =
+            5,000, stage mode = two-stage), a deterministic Crop Yield agronomic
+            data generator built for this thesis in the absence of accessible
+            real-world farm-monitoring data."</em> Include the seed, record count, and stage mode so the exact dataset is
+          reproducible from the tool alone — or use the auto-generated citation block
+          on the
+<a href="/generate/agri/crop-yield" data-astro-cid-uwzj6gts>generator page</a>, which
+          also includes the generator version, stage mode, and any
+          advanced-config changes.
+</p> </article> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container footer-top" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <p class="footer-brand-name mono" data-astro-cid-sz7xmlte> <a href="/" data-astro-cid-sz7xmlte>Dataset Foundry</a> </p> <p class="mono footer-tagline" data-astro-cid-sz7xmlte> Agriculture — synthetic data for research, not real policyholder data. </p> </div> <nav class="footer-col" aria-label="Insurance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/insurance" data-astro-cid-sz7xmlte>Insurance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/insurance/motor" data-astro-cid-sz7xmlte>Motor</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/life" data-astro-cid-sz7xmlte>Life</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/health-claims" data-astro-cid-sz7xmlte>Health</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/insurance/property" data-astro-cid-sz7xmlte>Home &amp; Property</a> </li> </ul> </nav><nav class="footer-col" aria-label="Finance lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/finance" data-astro-cid-sz7xmlte>Finance</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/finance/momo" data-astro-cid-sz7xmlte>Mobile Money</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/finance/susu" data-astro-cid-sz7xmlte>Micro-Credit &amp; Susu</a> </li> </ul> </nav><nav class="footer-col" aria-label="Health lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/health" data-astro-cid-sz7xmlte>Health</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/health/breast-cancer" data-astro-cid-sz7xmlte>Breast Cancer</a> </li><li data-astro-cid-sz7xmlte> <a href="/generate/health/chronic-kidney-disease" data-astro-cid-sz7xmlte>Chronic Kidney Disease</a> </li> </ul> </nav><nav class="footer-col" aria-label="Agriculture lines" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte> <a href="/agri" data-astro-cid-sz7xmlte>Agriculture</a> </p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="/generate/agri/crop-yield" data-astro-cid-sz7xmlte>Crop Yield</a> </li> </ul> </nav> <nav class="footer-col" aria-label="Support" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Support</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </nav> <nav class="footer-col" aria-label="Legal" data-astro-cid-sz7xmlte> <p class="footer-col-heading mono" data-astro-cid-sz7xmlte>Legal</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a></li> <li data-astro-cid-sz7xmlte><a href="/refund-policy" data-astro-cid-sz7xmlte>Refunds</a></li> </ul> </nav> </div> <div class="container footer-bottom" data-astro-cid-sz7xmlte> <p class="mono" data-astro-cid-sz7xmlte>&copy; 2026 Dataset Foundry.</p> </div> </footer>  </body></html> 
