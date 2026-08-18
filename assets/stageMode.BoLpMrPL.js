@@ -1,1 +1,0 @@
-function c(e){for(const t of e)if(t.checked)return t.value;return"two_stage"}function i(e,t,n="0.45"){e.style.opacity=t==="two_stage"?"1":n}function f(e,t,n){function r(){const o=c(e);for(const a of t)i(a,o);return o}for(const o of e)o.addEventListener("change",r);return r(),()=>c(e)}export{f as w};
