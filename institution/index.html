@@ -1,21 +1,43 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
       Institution dashboard · Insurance
-    </title><link rel="stylesheet" href="/assets/account.Dq1ErbjH.css"><script type="module" src="/assets/hoisted.CZDvcr-y.js"></script></head> <body> <!--
-      ROADMAP.md Phase 4.5.1 — platform strip. This is the
-      "frontfacing" piece of the platform pivot: a thin bar above the
-      current line family's header, present on every line-family
-      page, naming Dataset Foundry as the platform this family
-      belongs to and linking to the platform root at `/`. Deliberately
-      not a rebrand of the header itself (brand mark/wordmark below
-      stay this family's own brand) — see index.astro's own header
-      comment for the `/` <-> `/insurance` reversal. Omitted on the
-      platform page itself (variant="platform") — no reason to link a
-      page to itself.
-    -->
-    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+    </title><link rel="stylesheet" href="/assets/account.BFnkcT37.css"><script type="module" src="/assets/hoisted.Dl6FKP7e.js"></script></head> <body data-astro-cid-37fxchfa> <!--
+      Phase 6c task 2 (keyboard-nav pass) — every page shares this
+      layout, and the header's brand link + nav (a per-family dropdown
+      of "Home"/"Generate"/"Methodology", each with several sub-line
+      links) + auth links sat in front of `<main>` with no way to skip
+      past them. A keyboard user had to tab through the whole header
+      on every single page load before reaching page content — WCAG
+      2.4.1 (Bypass Blocks). Standard pattern: an off-screen link that
+      only becomes visible on keyboard focus, jumping straight to
+      `#main-content`.
+    --> <a href="#main-content" class="skip-link" data-astro-cid-37fxchfa>Skip to main content</a> <header class="site-header" data-astro-cid-3ef6ksr2> <!--
+        ROADMAP.md Phase 4.5.1 — platform strip. This is the
+        "frontfacing" piece of the platform pivot: a thin bar above the
+        current line family's header, present on every line-family
+        page, naming Dataset Foundry as the platform this family
+        belongs to and linking to the platform root at `/`. Deliberately
+        not a rebrand of the header itself (brand mark/wordmark below
+        stay this family's own brand) — see index.astro's own header
+        comment for the `/` <-> `/insurance` reversal. Omitted on the
+        platform page itself (variant="platform") — no reason to link a
+        page to itself.
+
+        Phase 6c task 4 follow-up (axe-core structural audit against
+        the real built HTML, jsdom-based since no browser was
+        available to run a live screen-reader pass — see
+        scripts/axe-audit.mjs): this used to be a sibling <div> before
+        <header>, which put it outside every ARIA landmark — a screen
+        reader in landmark-navigation mode would skip it entirely and
+        a "content not in a landmark" check flagged it on every
+        line-family generate page. Moved inside <header> instead (this
+        family's own brand/nav is unaffected below — no selector here
+        relied on the two being siblings), so it's part of the page's
+        one `banner` landmark rather than orphaned before it.
+      -->
+      <div class="platform-strip" data-astro-cid-3ef6ksr2> <div class="container platform-strip-inner" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>
 Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
-          citable datasets across domains
-</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/insurance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+            citable datasets across domains
+</a> </div> </div> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/insurance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ⚒
 </span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Insurance</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/insurance" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ▾
@@ -25,7 +47,7 @@ Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, 
 Institution
 </a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
 Log out
-</button> </div> </div> </header>   <main>  <section class="section-ledger" style="padding: 48px 24px 72px;"> <div class="container" style="max-width: 900px;"> <div id="loading-note" class="muted">Loading institution dashboard…</div> <div id="institution-content" hidden> <span class="eyebrow">Institution</span> <h1 id="institution-heading">Institution dashboard</h1> <p class="muted" id="institution-subline"></p> <div class="account-section" style="margin-top: 28px;"> <h2>Seats</h2> <div class="stat-grid"> <div class="stat-card"> <div class="stat-label">Seats used</div> <div class="stat-value" id="seats-used-value"></div> </div> <div class="stat-card"> <div class="stat-label">Seats remaining</div> <div class="stat-value" id="seats-remaining-value"></div> </div> <div class="stat-card"> <div class="stat-label">Seat limit</div> <div class="stat-value" id="seats-limit-value"></div> </div> </div> </div> <div class="account-section" style="margin-top: 20px;"> <h2>Pooled wallet</h2> <p class="muted">
+</button> </div> </div> </header>   <main id="main-content" data-astro-cid-37fxchfa>  <section class="section-ledger" style="padding: 48px 24px 72px;"> <div class="container" style="max-width: 900px;"> <div id="loading-note" class="muted">Loading institution dashboard…</div> <div id="institution-content" hidden> <span class="eyebrow">Institution</span> <h1 id="institution-heading">Institution dashboard</h1> <p class="muted" id="institution-subline"></p> <div class="account-section" style="margin-top: 28px;"> <h2>Seats</h2> <div class="stat-grid"> <div class="stat-card"> <div class="stat-label">Seats used</div> <div class="stat-value" id="seats-used-value"></div> </div> <div class="stat-card"> <div class="stat-label">Seats remaining</div> <div class="stat-value" id="seats-remaining-value"></div> </div> <div class="stat-card"> <div class="stat-label">Seat limit</div> <div class="stat-value" id="seats-limit-value"></div> </div> </div> </div> <div class="account-section" style="margin-top: 20px;"> <h2>Pooled wallet</h2> <p class="muted">
 Shared row balance every member's generation draws from — topped up
             by an admin's paid invoice/PO, not per-member.
 </p> <div id="threshold-banner" class="dunning-banner" role="alert" hidden> <strong id="threshold-banner-heading"></strong> <span id="threshold-banner-message"></span> </div> <p class="wallet-balance" id="pooled-balance"></p> <p class="muted" id="renewal-line"></p> </div> <div class="account-section" style="margin-top: 20px;"> <h2>Members</h2> <p class="muted" id="members-seat-count"></p> <form id="add-member-form" style="margin: 16px 0 20px;"> <div class="field-row" style="margin-bottom: 12px;"> <div class="field"> <label for="member-email">Email</label> <input type="email" id="member-email" name="email" autocomplete="off" required> </div> <div class="field"> <label for="member-role">Role</label> <select id="member-role" name="role"> <option value="member" selected>Member</option> <option value="admin">Admin</option> </select> </div> </div> <div id="add-member-status" class="form-status" role="status" aria-live="polite"></div> <button type="submit" class="btn btn-primary" id="add-member-btn">Add member</button> </form> <div id="members-list"></div> </div> <div class="account-section" style="margin-top: 20px;"> <h2>Audit log</h2> <p class="muted">

@@ -1,23 +1,45 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Dataset Foundry Terms of Service — accounts, billing, acceptable use, and what the Service is (and isn't)."><title>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Dataset Foundry Terms of Service — accounts, billing, acceptable use, and what the Service is (and isn't)."><title>
       Terms of Service · Insurance
     </title><style>.intro[data-astro-cid-y5py4vqc]{padding:72px 0 56px}.lede[data-astro-cid-y5py4vqc]{max-width:68ch;font-size:1.03rem}.doc[data-astro-cid-y5py4vqc]{padding-bottom:100px}.doc-grid[data-astro-cid-y5py4vqc] article[data-astro-cid-y5py4vqc]{max-width:74ch}h2[data-astro-cid-y5py4vqc]{margin-top:2em}ul[data-astro-cid-y5py4vqc],ol[data-astro-cid-y5py4vqc]{padding-left:1.3em}li[data-astro-cid-y5py4vqc]{margin-bottom:.6em}
 </style>
-<link rel="stylesheet" href="/assets/account.Dq1ErbjH.css"><script type="module" src="/assets/hoisted.DOQRZ0pz.js"></script></head> <body> <!--
-      ROADMAP.md Phase 4.5.1 — platform strip. This is the
-      "frontfacing" piece of the platform pivot: a thin bar above the
-      current line family's header, present on every line-family
-      page, naming Dataset Foundry as the platform this family
-      belongs to and linking to the platform root at `/`. Deliberately
-      not a rebrand of the header itself (brand mark/wordmark below
-      stay this family's own brand) — see index.astro's own header
-      comment for the `/` <-> `/insurance` reversal. Omitted on the
-      platform page itself (variant="platform") — no reason to link a
-      page to itself.
-    -->
-    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+<link rel="stylesheet" href="/assets/account.BFnkcT37.css"><script type="module" src="/assets/hoisted.PcCd-mlm.js"></script></head> <body data-astro-cid-37fxchfa> <!--
+      Phase 6c task 2 (keyboard-nav pass) — every page shares this
+      layout, and the header's brand link + nav (a per-family dropdown
+      of "Home"/"Generate"/"Methodology", each with several sub-line
+      links) + auth links sat in front of `<main>` with no way to skip
+      past them. A keyboard user had to tab through the whole header
+      on every single page load before reaching page content — WCAG
+      2.4.1 (Bypass Blocks). Standard pattern: an off-screen link that
+      only becomes visible on keyboard focus, jumping straight to
+      `#main-content`.
+    --> <a href="#main-content" class="skip-link" data-astro-cid-37fxchfa>Skip to main content</a> <header class="site-header" data-astro-cid-3ef6ksr2> <!--
+        ROADMAP.md Phase 4.5.1 — platform strip. This is the
+        "frontfacing" piece of the platform pivot: a thin bar above the
+        current line family's header, present on every line-family
+        page, naming Dataset Foundry as the platform this family
+        belongs to and linking to the platform root at `/`. Deliberately
+        not a rebrand of the header itself (brand mark/wordmark below
+        stay this family's own brand) — see index.astro's own header
+        comment for the `/` <-> `/insurance` reversal. Omitted on the
+        platform page itself (variant="platform") — no reason to link a
+        page to itself.
+
+        Phase 6c task 4 follow-up (axe-core structural audit against
+        the real built HTML, jsdom-based since no browser was
+        available to run a live screen-reader pass — see
+        scripts/axe-audit.mjs): this used to be a sibling <div> before
+        <header>, which put it outside every ARIA landmark — a screen
+        reader in landmark-navigation mode would skip it entirely and
+        a "content not in a landmark" check flagged it on every
+        line-family generate page. Moved inside <header> instead (this
+        family's own brand/nav is unaffected below — no selector here
+        relied on the two being siblings), so it's part of the page's
+        one `banner` landmark rather than orphaned before it.
+      -->
+      <div class="platform-strip" data-astro-cid-3ef6ksr2> <div class="container platform-strip-inner" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>
 Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
-          citable datasets across domains
-</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/insurance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+            citable datasets across domains
+</a> </div> </div> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/insurance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ⚒
 </span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Insurance</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/insurance" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ▾
@@ -27,7 +49,7 @@ Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, 
 Institution
 </a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
 Log out
-</button> </div> </div> </header>   <main>  <section class="section-dark intro" data-astro-cid-y5py4vqc> <div class="container" data-astro-cid-y5py4vqc> <span class="eyebrow" data-astro-cid-y5py4vqc>Legal</span> <h1 data-astro-cid-y5py4vqc>Terms of Service</h1> <p class="muted lede" data-astro-cid-y5py4vqc>Effective August 8, 2026.</p> </div> </section> <section class="section-ledger doc" data-astro-cid-y5py4vqc> <div class="container doc-grid" data-astro-cid-y5py4vqc> <article data-astro-cid-y5py4vqc> <h2 data-astro-cid-y5py4vqc>1. Who we are</h2> <p data-astro-cid-y5py4vqc>
+</button> </div> </div> </header>   <main id="main-content" data-astro-cid-37fxchfa>  <section class="section-dark intro" data-astro-cid-y5py4vqc> <div class="container" data-astro-cid-y5py4vqc> <span class="eyebrow" data-astro-cid-y5py4vqc>Legal</span> <h1 data-astro-cid-y5py4vqc>Terms of Service</h1> <p class="muted lede" data-astro-cid-y5py4vqc>Effective August 8, 2026.</p> </div> </section> <section class="section-ledger doc" data-astro-cid-y5py4vqc> <div class="container doc-grid" data-astro-cid-y5py4vqc> <article data-astro-cid-y5py4vqc> <h2 data-astro-cid-y5py4vqc>1. Who we are</h2> <p data-astro-cid-y5py4vqc>
 Dataset Foundry ("Dataset Foundry," "we," "us," "our") is a
           synthetic dataset generation platform, registered in Ghana. Insurance
           — covering motor, life, health, and Home & Property claims data — is

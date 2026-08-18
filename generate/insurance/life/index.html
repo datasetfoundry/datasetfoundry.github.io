@@ -1,25 +1,48 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
       Generate a life insurance dataset · Insurance
-    </title><link rel="stylesheet" href="/assets/account.Dq1ErbjH.css">
+    </title><link rel="stylesheet" href="/assets/account.BFnkcT37.css">
 <style>.seed-stamp[data-astro-cid-vvessfcc]{display:inline-flex;line-height:0}
+.save-preset-row[data-astro-cid-zksjrmqd]{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}.save-preset-name[data-astro-cid-zksjrmqd]{flex:1 1 220px;min-width:160px;font-family:inherit;font-size:.88rem;padding:8px 10px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--paper);color:var(--ink)}.save-preset-name[data-astro-cid-zksjrmqd]:focus-visible{outline:2px solid var(--ember);outline-offset:1px}.save-preset-name[data-astro-cid-zksjrmqd]:disabled{opacity:.6}.save-preset-hint[data-astro-cid-zksjrmqd]{margin:6px 0 0}
 .field-hint[data-astro-cid-o35xa32e]{margin-top:6px;font-size:.76rem;color:var(--ink-muted)}.stage-mode-field[data-astro-cid-o35xa32e]{width:100%}.radio-group[data-astro-cid-o35xa32e]{display:flex;gap:20px;flex-wrap:wrap;margin-top:4px}.radio-option[data-astro-cid-o35xa32e]{display:flex;align-items:center;gap:6px;font-size:.88rem;cursor:pointer}.radio-option[data-astro-cid-o35xa32e] input[data-astro-cid-o35xa32e][type=radio]{accent-color:var(--ember);cursor:pointer}
 </style>
-<link rel="stylesheet" href="/assets/life.8wyj_XMw.css"><script type="module" src="/assets/hoisted.DECoGlN3.js"></script></head> <body> <!--
-      ROADMAP.md Phase 4.5.1 — platform strip. This is the
-      "frontfacing" piece of the platform pivot: a thin bar above the
-      current line family's header, present on every line-family
-      page, naming Dataset Foundry as the platform this family
-      belongs to and linking to the platform root at `/`. Deliberately
-      not a rebrand of the header itself (brand mark/wordmark below
-      stay this family's own brand) — see index.astro's own header
-      comment for the `/` <-> `/insurance` reversal. Omitted on the
-      platform page itself (variant="platform") — no reason to link a
-      page to itself.
-    -->
-    <div class="platform-strip" data-astro-cid-3ef6ksr2><div class="container platform-strip-inner" data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>
+<link rel="stylesheet" href="/assets/life.8wyj_XMw.css"><script type="module" src="/assets/hoisted.CBG1RFEU.js"></script></head> <body data-astro-cid-37fxchfa> <!--
+      Phase 6c task 2 (keyboard-nav pass) — every page shares this
+      layout, and the header's brand link + nav (a per-family dropdown
+      of "Home"/"Generate"/"Methodology", each with several sub-line
+      links) + auth links sat in front of `<main>` with no way to skip
+      past them. A keyboard user had to tab through the whole header
+      on every single page load before reaching page content — WCAG
+      2.4.1 (Bypass Blocks). Standard pattern: an off-screen link that
+      only becomes visible on keyboard focus, jumping straight to
+      `#main-content`.
+    --> <a href="#main-content" class="skip-link" data-astro-cid-37fxchfa>Skip to main content</a> <header class="site-header" data-astro-cid-3ef6ksr2> <!--
+        ROADMAP.md Phase 4.5.1 — platform strip. This is the
+        "frontfacing" piece of the platform pivot: a thin bar above the
+        current line family's header, present on every line-family
+        page, naming Dataset Foundry as the platform this family
+        belongs to and linking to the platform root at `/`. Deliberately
+        not a rebrand of the header itself (brand mark/wordmark below
+        stay this family's own brand) — see index.astro's own header
+        comment for the `/` <-> `/insurance` reversal. Omitted on the
+        platform page itself (variant="platform") — no reason to link a
+        page to itself.
+
+        Phase 6c task 4 follow-up (axe-core structural audit against
+        the real built HTML, jsdom-based since no browser was
+        available to run a live screen-reader pass — see
+        scripts/axe-audit.mjs): this used to be a sibling <div> before
+        <header>, which put it outside every ARIA landmark — a screen
+        reader in landmark-navigation mode would skip it entirely and
+        a "content not in a landmark" check flagged it on every
+        line-family generate page. Moved inside <header> instead (this
+        family's own brand/nav is unaffected below — no selector here
+        relied on the two being siblings), so it's part of the page's
+        one `banner` landmark rather than orphaned before it.
+      -->
+      <div class="platform-strip" data-astro-cid-3ef6ksr2> <div class="container platform-strip-inner" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>
 Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, documented,
-          citable datasets across domains
-</a></div></div><header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/insurance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+            citable datasets across domains
+</a> </div> </div> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/insurance" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ⚒
 </span> <span data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>Insurance</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/insurance" data-astro-cid-3ef6ksr2>Home</a><div class="nav-dropdown" data-astro-cid-3ef6ksr2> <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-astro-cid-3ef6ksr2> Generate <span class="nav-caret" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ▾
@@ -29,7 +52,7 @@ Part of <strong data-astro-cid-3ef6ksr2>Dataset Foundry</strong> — synthetic, 
 Institution
 </a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
 Log out
-</button> </div> </div> </header>   <main>  <section class="section-dark intro" data-astro-cid-bp7i4k7n> <div class="container" data-astro-cid-bp7i4k7n> <span class="eyebrow" data-astro-cid-bp7i4k7n>The tool</span> <h1 data-astro-cid-bp7i4k7n>Forge a life insurance dataset</h1> <p class="muted lede" data-astro-cid-bp7i4k7n>
+</button> </div> </div> </header>   <main id="main-content" data-astro-cid-37fxchfa>  <section class="section-dark intro" data-astro-cid-bp7i4k7n> <div class="container" data-astro-cid-bp7i4k7n> <span class="eyebrow" data-astro-cid-bp7i4k7n>The tool</span> <h1 data-astro-cid-bp7i4k7n>Forge a life insurance dataset</h1> <p class="muted lede" data-astro-cid-bp7i4k7n>
 Choose how many policy records you want and a seed. The same two numbers
         will always produce the same dataset — write the seed down and cite it
         in your methodology chapter.
@@ -76,12 +99,21 @@ Off by default — most statistical work has no use for a name
               column. This is a separate decision from the Country field above:
               that only decides which name pool a name would be drawn from, not
               whether this dataset has names in it at all.
-</p> <label class="checkbox-field" for="include-names" data-astro-cid-bp7i4k7n> <input type="checkbox" id="include-names" name="includeNames" data-astro-cid-bp7i4k7n> <span data-astro-cid-bp7i4k7n>Include a synthetic <span class="mono" data-astro-cid-bp7i4k7n>insured_name</span> column</span> </label> </div> <button type="button" class="btn btn-outline" id="reset-advanced-btn" data-astro-cid-bp7i4k7n>Reset to defaults</button> </details> <p id="status-line" class="mono status-line" role="status" data-astro-cid-bp7i4k7n></p> <div id="results" hidden data-astro-cid-bp7i4k7n> <hr class="rule" data-astro-cid-bp7i4k7n> <h3 data-astro-cid-bp7i4k7n>Cite this dataset</h3> <p class="muted" data-astro-cid-bp7i4k7n>
+</p> <label class="checkbox-field" for="include-names" data-astro-cid-bp7i4k7n> <input type="checkbox" id="include-names" name="includeNames" data-astro-cid-bp7i4k7n> <span data-astro-cid-bp7i4k7n>Include a synthetic <span class="mono" data-astro-cid-bp7i4k7n>insured_name</span> column</span> </label> </div> <button type="button" class="btn btn-outline" id="reset-advanced-btn" data-astro-cid-bp7i4k7n>Reset to defaults</button> <div class="save-preset-row" data-astro-cid-zksjrmqd> <input type="text" id="save-preset-name" class="save-preset-name" placeholder="Preset name" maxlength="80" aria-label="Preset name" data-astro-cid-zksjrmqd> <button type="button" class="btn btn-outline" id="save-preset-btn" data-astro-cid-zksjrmqd>Save preset</button> </div> <p class="muted small save-preset-hint" id="save-preset-hint" data-astro-cid-zksjrmqd></p>  </details> <p id="status-line" class="mono status-line" role="status" data-astro-cid-bp7i4k7n></p> <div id="results" hidden data-astro-cid-bp7i4k7n> <hr class="rule" data-astro-cid-bp7i4k7n> <h3 data-astro-cid-bp7i4k7n>Cite this dataset</h3> <p class="muted" data-astro-cid-bp7i4k7n>
 This is a specific, reproducible dataset — seed, record count,
             generator version, and any advanced-config changes are all part of
             what makes it citable. Copy a citation below, or download the full
             provenance manifest for a supervisor or reviewer to verify against.
-</p> <div class="citation-block" id="citation-block" data-astro-cid-bp7i4k7n> <div class="citation-tab-buttons" id="citation-tab-buttons" role="tablist" data-astro-cid-bp7i4k7n> <button type="button" class="citation-tab-btn" data-format="apa" data-astro-cid-bp7i4k7n>APA</button> <button type="button" class="citation-tab-btn" data-format="mla" data-astro-cid-bp7i4k7n>MLA</button> <button type="button" class="citation-tab-btn" data-format="chicago" data-astro-cid-bp7i4k7n>Chicago</button> <button type="button" class="citation-tab-btn" data-format="bibtex" data-astro-cid-bp7i4k7n>BibTeX</button> </div> <pre class="citation-text mono" id="citation-text" data-astro-cid-bp7i4k7n></pre> <div class="citation-actions" data-astro-cid-bp7i4k7n> <button type="button" class="btn btn-outline" id="copy-citation-btn" data-astro-cid-bp7i4k7n>Copy citation</button> <button type="button" class="btn btn-outline" id="download-manifest-btn" data-astro-cid-bp7i4k7n>Download manifest.json</button> <span class="mono checksum-line" id="checksum-line" data-astro-cid-bp7i4k7n></span> </div> </div> <details class="data-dictionary-panel" id="data-dictionary-panel" data-astro-cid-bp7i4k7n> <summary data-astro-cid-bp7i4k7n>Data dictionary (<span id="dict-count" data-astro-cid-bp7i4k7n>0</span> columns)</summary> <div class="table-scroll" data-astro-cid-bp7i4k7n> <table class="data-dictionary-table" id="data-dictionary-table" data-astro-cid-bp7i4k7n> <thead data-astro-cid-bp7i4k7n> <tr data-astro-cid-bp7i4k7n> <th data-astro-cid-bp7i4k7n>Column</th> <th data-astro-cid-bp7i4k7n>Type</th> <th data-astro-cid-bp7i4k7n>Unit</th> <th data-astro-cid-bp7i4k7n>Description</th> </tr> </thead> <tbody id="data-dictionary-body" data-astro-cid-bp7i4k7n></tbody> </table> </div> </details> <hr class="rule" data-astro-cid-bp7i4k7n> <h3 data-astro-cid-bp7i4k7n>Hypothesis check</h3> <p class="muted" data-astro-cid-bp7i4k7n>
+</p> <p class="muted small" data-astro-cid-bp7i4k7n>
+This is synthetic data, not real records — safe to use freely for
+            research, coursework, or analysis, but it should never be presented
+            as real-world data. If this dataset (or results derived from it)
+            appears in published, submitted, or graded work, please cite the
+            specific seed and generator version using the citation tool below.
+</p> <div class="citation-block" id="citation-block" data-astro-cid-bp7i4k7n> <div class="citation-tab-buttons" id="citation-tab-buttons" role="tablist" aria-label="Citation format" data-astro-cid-bp7i4k7n> <button type="button" class="citation-tab-btn" id="citation-tab-apa" data-format="apa" role="tab" aria-selected="true" aria-controls="citation-text" tabindex="0" data-astro-cid-bp7i4k7n>APA</button> <button type="button" class="citation-tab-btn" id="citation-tab-mla" data-format="mla" role="tab" aria-selected="false" aria-controls="citation-text" tabindex="-1" data-astro-cid-bp7i4k7n>MLA</button> <button type="button" class="citation-tab-btn" id="citation-tab-chicago" data-format="chicago" role="tab" aria-selected="false" aria-controls="citation-text" tabindex="-1" data-astro-cid-bp7i4k7n>Chicago</button> <button type="button" class="citation-tab-btn" id="citation-tab-bibtex" data-format="bibtex" role="tab" aria-selected="false" aria-controls="citation-text" tabindex="-1" data-astro-cid-bp7i4k7n>BibTeX</button> </div> <pre class="citation-text mono" id="citation-text" role="tabpanel" aria-labelledby="citation-tab-apa" tabindex="0" data-astro-cid-bp7i4k7n>            </pre> <div class="citation-actions" data-astro-cid-bp7i4k7n> <button type="button" class="btn btn-outline" id="copy-citation-btn" data-astro-cid-bp7i4k7n>Copy citation</button> <button type="button" class="btn btn-outline" id="download-manifest-btn" data-astro-cid-bp7i4k7n>Download manifest.json</button> <span class="mono checksum-line" id="checksum-line" data-astro-cid-bp7i4k7n></span> </div> </div> <p class="muted small" id="export-formats-note" hidden data-astro-cid-bp7i4k7n>
+Also downloadable as <span id="export-formats-note-text" data-astro-cid-bp7i4k7n></span> from
+            your account's <a href="/account" data-astro-cid-bp7i4k7n>Generation history</a>.
+</p> <details class="data-dictionary-panel" id="data-dictionary-panel" data-astro-cid-bp7i4k7n> <summary data-astro-cid-bp7i4k7n>Data dictionary (<span id="dict-count" data-astro-cid-bp7i4k7n>0</span> columns)</summary> <div class="table-scroll" data-astro-cid-bp7i4k7n> <table class="data-dictionary-table" id="data-dictionary-table" data-astro-cid-bp7i4k7n> <thead data-astro-cid-bp7i4k7n> <tr data-astro-cid-bp7i4k7n> <th data-astro-cid-bp7i4k7n>Column</th> <th data-astro-cid-bp7i4k7n>Type</th> <th data-astro-cid-bp7i4k7n>Unit</th> <th data-astro-cid-bp7i4k7n>Description</th> </tr> </thead> <tbody id="data-dictionary-body" data-astro-cid-bp7i4k7n></tbody> </table> </div> </details> <hr class="rule" data-astro-cid-bp7i4k7n> <h3 data-astro-cid-bp7i4k7n>Hypothesis check</h3> <p class="muted" data-astro-cid-bp7i4k7n>
 Directional confirmation on this batch — sign and rough magnitude
             should match, exact numbers will vary run to run except when the
             seed is held fixed. Unlike motor, these hypotheses are on claim

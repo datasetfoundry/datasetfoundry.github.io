@@ -1,21 +1,41 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="Deterministic synthetic insurance data — motor, life, health, and Home &#38; Property live now, Ghana the current default with country selectable per generation — built for research and thesis work."><title>
       Your account · Dataset Foundry
-    </title><link rel="stylesheet" href="/assets/account.Dq1ErbjH.css"><script type="module" src="/assets/hoisted.DQQ14OIG.js"></script></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
+    </title><link rel="stylesheet" href="/assets/account.BFnkcT37.css"><script type="module" src="/assets/hoisted.BzY4nHg7.js"></script></head> <body data-astro-cid-37fxchfa> <!--
+      Phase 6c task 2 (keyboard-nav pass) — every page shares this
+      layout, and the header's brand link + nav (a per-family dropdown
+      of "Home"/"Generate"/"Methodology", each with several sub-line
+      links) + auth links sat in front of `<main>` with no way to skip
+      past them. A keyboard user had to tab through the whole header
+      on every single page load before reaching page content — WCAG
+      2.4.1 (Bypass Blocks). Standard pattern: an off-screen link that
+      only becomes visible on keyboard focus, jumping straight to
+      `#main-content`.
+    --> <a href="#main-content" class="skip-link" data-astro-cid-37fxchfa>Skip to main content</a> <header class="site-header" data-astro-cid-3ef6ksr2>  <div class="container header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>
 ⚒
 </span> <span data-astro-cid-3ef6ksr2>
 Dataset <strong data-astro-cid-3ef6ksr2>Foundry</strong> </span> </a> <nav data-astro-cid-3ef6ksr2> <a href="/insurance" data-astro-cid-3ef6ksr2>Insurance</a><a href="/finance" data-astro-cid-3ef6ksr2>Finance</a><a href="/health" data-astro-cid-3ef6ksr2>Health</a><a href="/agri" data-astro-cid-3ef6ksr2>Agriculture</a> </nav> <div class="header-auth" data-astro-cid-3ef6ksr2> <a href="/login" id="header-login-link" data-astro-cid-3ef6ksr2>Log in</a> <a href="/institution" id="header-institution-link" hidden data-astro-cid-3ef6ksr2>
 Institution
 </a> <a href="/account" id="header-account-link" hidden data-astro-cid-3ef6ksr2>Account</a> <button type="button" class="nav-link" id="header-logout-btn" hidden data-astro-cid-3ef6ksr2>
 Log out
-</button> </div> </div> </header>   <main>  <section class="section-ledger" style="padding: 48px 24px 72px;"> <div class="container" style="max-width: 900px;"> <div id="loading-note" class="muted">Loading your account…</div> <div id="account-content" hidden> <span class="eyebrow">Account</span> <h1 id="welcome-heading">Your account</h1> <div class="account-grid"> <div class="account-section account-section--usage"> <h2>Usage this period</h2> <p class="muted" id="usage-period-note"></p> <div class="stat-grid"> <div class="stat-card"> <div class="stat-label">Rows generated</div> <div class="stat-value" id="usage-rows-generated"></div> </div> <div class="stat-card"> <div class="stat-label" id="usage-balance-label">
+</button> </div> </div> </header>   <main id="main-content" data-astro-cid-37fxchfa>  <section class="section-ledger" style="padding: 48px 24px 72px;"> <div class="container" style="max-width: 900px;"> <div id="loading-note" class="muted">Loading your account…</div> <div id="account-content" hidden> <span class="eyebrow">Account</span> <h1 id="welcome-heading">Your account</h1> <div class="account-grid"> <div class="account-section account-section--usage"> <h2>Usage this period</h2> <p class="muted" id="usage-period-note"></p> <div class="stat-grid"> <div class="stat-card"> <div class="stat-label">Rows generated</div> <div class="stat-value" id="usage-rows-generated"></div> </div> <div class="stat-card"> <div class="stat-label" id="usage-balance-label">
 Wallet balance
 </div> <div class="stat-value" id="usage-balance-value"></div> </div> <div class="stat-card"> <div class="stat-label">Current tier</div> <div class="stat-value" id="usage-tier-value"></div> </div> </div> </div> <div class="account-section account-section--profile"> <div class="profile-header"> <div> <h2>Profile</h2> <p class="muted" id="profile-line"></p> </div> <button type="button" class="btn btn-outline" id="logout-btn">Log out</button> </div> <p class="wallet-balance" id="wallet-balance"></p> <p style="margin-top: 10px;"> <a href="/wallet">Top up wallet</a> </p> </div> <div class="account-section account-section--plan"> <h2>Plan</h2> <div id="dunning-banner" class="dunning-banner" role="alert" hidden> <strong>We couldn't process your last payment.</strong> <span id="dunning-message">Update your payment method with Paystack to keep your Pro
-                access — it stays active during the retry window shown below.</span> </div> <p id="plan-line"></p> <p style="margin-top: 14px;"> <a href="/subscribe" id="upgrade-link" hidden>Upgrade to Dataset Foundry Pro</a> <button type="button" class="btn-text" id="cancel-plan-btn" hidden>Cancel subscription</button> </p> </div> <div class="account-section account-section--presets"> <h2>Saved presets</h2> <p class="muted">
+                access — it stays active during the retry window shown below.</span> </div> <p id="plan-line"></p> <p style="margin-top: 14px;"> <a href="/subscribe" id="upgrade-link" hidden>Upgrade to Dataset Foundry Pro</a> <button type="button" class="btn-text" id="cancel-plan-btn" hidden>Cancel subscription</button> </p> </div> <!-- ROADMAP.md Phase 6c task 4: announces preset-delete and
+               redownload outcomes to screen-reader users — both actions
+               previously only changed the page visually (a row removed,
+               a button's transient label), which isn't announced by AT
+               without a live region. Shared across the presets and
+               history sections below; visually hidden via .sr-only. --> <p id="account-live-status" class="sr-only" role="status" aria-live="polite"></p> <div class="account-section account-section--presets"> <h2>Saved presets</h2> <p class="muted">
 Named advanced-config setups you've saved from the
 <a href="/#families" id="presets-generator-link">generator</a>.
 </p> <div id="presets-list"></div> <p class="muted" id="presets-empty" hidden>No saved presets yet.</p> </div> <div class="account-section account-section--history"> <h2>Generation history</h2> <p class="muted">
 Past generations — re-download the exact same dataset any time,
               since seed + config always reproduces it.
+</p> <p class="muted small">
+Every dataset here is synthetic. If you use one in published,
+              submitted, or graded work, please cite the specific seed and
+              generator version — see the citation tool on the generate page, or
+              a downloaded manifest.json.
 </p> <div id="history-list"></div> <p class="muted" id="history-empty" hidden>
 No generations saved to your account yet.
 <a href="/#families">Pick a line to get started</a>.
