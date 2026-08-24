@@ -1,0 +1,8 @@
+import{j as u,e as d}from"./AdminLayout.astro_astro_type_script_index_0_lang.B3U6_NlI.js";import{A as r}from"./hoisted.C-eSqWrG.js";const g=document.getElementById("search-form"),p=document.getElementById("search-input"),a=document.getElementById("list-loading"),i=document.getElementById("list-error"),s=document.getElementById("list-content"),h=document.getElementById("list-table-body"),y=document.getElementById("list-empty"),E=document.getElementById("list-page-note"),m=document.getElementById("list-prev-btn"),c=document.getElementById("list-next-btn"),f={member:"Member",admin:"Admin"};let l="",n=1;function B(e){return new Date(e).toLocaleDateString(void 0,{year:"numeric",month:"short",day:"numeric"})}async function o(){a.hidden=!1,i.hidden=!0,s.hidden=!0;try{const e=await u({q:l||void 0,page:n});h.innerHTML=e.results.map(t=>`
+        <tr>
+          <td>${d(t.email)}</td>
+          <td>${d(t.full_name)||"—"}</td>
+          <td>${d(t.institution_name)}</td>
+          <td>${d(f[t.role]??t.role)}</td>
+          <td>${B(t.created_at)}</td>
+        </tr>`).join(""),y.hidden=e.results.length!==0,E.textContent=`Page ${e.page} of ${e.num_pages} · ${e.count.toLocaleString()} membership${e.count===1?"":"s"}`,m.disabled=e.page<=1,c.disabled=e.page>=e.num_pages,a.hidden=!0,s.hidden=!1}catch(e){document.dispatchEvent(new CustomEvent("admin:api-error",{detail:{error:e}})),a.hidden=!0,e instanceof r&&e.status===403||(i.hidden=!1,i.textContent=e instanceof r?e.message:"Something went wrong.")}}g.addEventListener("submit",e=>{e.preventDefault(),l=p.value.trim(),n=1,o()});m.addEventListener("click",()=>{n=Math.max(1,n-1),o()});c.addEventListener("click",()=>{n+=1,o()});document.addEventListener("admin:authorized",o);
