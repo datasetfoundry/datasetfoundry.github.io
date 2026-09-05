@@ -1,0 +1,10 @@
+import{p as g,e as d}from"./AdminLayout.astro_astro_type_script_index_0_lang.B6Ktzxqo.js";import{A as i}from"./hoisted.BdlXoAHR.js";const p=document.getElementById("filter-form"),f=document.getElementById("q-input"),y=document.getElementById("status-filter"),o=document.getElementById("txns-loading"),a=document.getElementById("txns-error"),r=document.getElementById("txns-content"),E=document.getElementById("txns-table-body"),h=document.getElementById("txns-empty"),v=document.getElementById("txns-page-note"),c=document.getElementById("txns-prev-btn"),m=document.getElementById("txns-next-btn"),B={pending:"Pending",success:"Success",failed:"Failed"};let u="",l="",n=1;function x(t){return new Date(t).toLocaleString(void 0,{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})}function $(t){return`₵${(t/100).toLocaleString(void 0,{minimumFractionDigits:2,maximumFractionDigits:2})}`}async function s(){o.hidden=!1,a.hidden=!0,r.hidden=!0;try{const t=await g({q:u||void 0,status:l||void 0,page:n});E.innerHTML=t.results.map(e=>`
+        <tr>
+          <td class="mono">${d(e.reference)}</td>
+          <td>${d(e.user_email)}</td>
+          <td>${d(e.pack)}</td>
+          <td>${e.rows.toLocaleString()}${e.bonus_rows?` (+${e.bonus_rows} bonus)`:""}</td>
+          <td>${$(e.amount_pesewas)}</td>
+          <td>${d(B[e.status]??e.status)}</td>
+          <td>${x(e.created_at)}</td>
+        </tr>`).join(""),h.hidden=t.results.length!==0,v.textContent=`Page ${t.page} of ${t.num_pages} · ${t.count.toLocaleString()} transaction${t.count===1?"":"s"}`,c.disabled=t.page<=1,m.disabled=t.page>=t.num_pages,o.hidden=!0,r.hidden=!1}catch(t){document.dispatchEvent(new CustomEvent("admin:api-error",{detail:{error:t}})),o.hidden=!0,t instanceof i&&t.status===403||(a.hidden=!1,a.textContent=t instanceof i?t.message:"Something went wrong.")}}p.addEventListener("submit",t=>{t.preventDefault(),u=f.value.trim(),l=y.value,n=1,s()});c.addEventListener("click",()=>{n=Math.max(1,n-1),s()});m.addEventListener("click",()=>{n+=1,s()});document.addEventListener("admin:authorized",s);
